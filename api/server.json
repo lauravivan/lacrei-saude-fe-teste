@@ -1,0 +1,88 @@
+{
+  "professionals": [
+    {
+      "name": "Dra. Ana Silva",
+      "identity": {
+        "race": "preta",
+        "gender": "mulher trans",
+        "sexuality": "lésbica"
+      },
+      "specialty": "endocrinologista",
+      "expertise": "Especialista em diabetes, obesidade e distúrbios hormonais com mais de 15 anos de experiência",
+      "rating": 5.0,
+      "experience_years": 15,
+      "education": "Faculdade de Medicina da USP",
+      "languages": ["Português", "Inglês"],
+      "phone": "+55 (11) 99999-1111",
+      "consultation_info": {
+        "procedure": "Consulta em endocrinologia",
+        "price": "R$ 450,00",
+        "address": "Av. Paulista, 1000 - São Paulo, SP",
+        "available_times": ["08:00", "09:00", "10:00", "14:00", "15:00"]
+      }
+    },
+    {
+      "name": "Dr. Rafael Souza",
+      "identity": {
+        "race": "pardo",
+        "gender": "homem cis",
+        "sexuality": "gay"
+      },
+      "specialty": "psiquiatra",
+      "expertise": "Atuação em ansiedade, depressão e saúde mental LGBTQIA+",
+      "rating": 4.8,
+      "experience_years": 10,
+      "education": "Faculdade de Medicina da UFRJ",
+      "languages": ["Português", "Espanhol"],
+      "phone": "+55 (21) 98888-2222",
+      "consultation_info": {
+        "procedure": "Consulta em psiquiatria",
+        "price": "R$ 350,00",
+        "address": "Rua do Catete, 200 - Rio de Janeiro, RJ",
+        "available_times": ["09:00", "11:00", "13:00", "16:00", "18:00"]
+      }
+    },
+    {
+      "name": "Dra. Camila Ferreira",
+      "identity": {
+        "race": "branca",
+        "gender": "mulher cis",
+        "sexuality": "bissexual"
+      },
+      "specialty": "ginecologista",
+      "expertise": "Especialista em saúde reprodutiva, contracepção e pré-natal",
+      "rating": 4.9,
+      "experience_years": 12,
+      "education": "Faculdade de Ciências Médicas da UNICAMP",
+      "languages": ["Português", "Inglês", "Francês"],
+      "phone": "+55 (19) 97777-3333",
+      "consultation_info": {
+        "procedure": "Consulta em ginecologia",
+        "price": "R$ 400,00",
+        "address": "Rua Barão de Itapura, 1500 - Campinas, SP",
+        "available_times": ["08:00", "10:00", "14:00", "15:00", "17:00"]
+      }
+    },
+    {
+      "name": "Dr. João Pereira",
+      "identity": {
+        "race": "indígena",
+        "gender": "homem cis",
+        "sexuality": "heterossexual"
+      },
+      "specialty": "clínico geral",
+      "expertise": "Atendimento em atenção primária com foco em prevenção e saúde comunitária",
+      "rating": 4.7,
+      "experience_years": 8,
+      "education": "Faculdade de Medicina da UFAM",
+      "languages": ["Português", "Línguas indígenas"],
+      "phone": "+55 (92) 96666-4444",
+      "consultation_info": {
+        "procedure": "Consulta clínica geral",
+        "price": "R$ 250,00",
+        "address": "Av. Sete de Setembro, 300 - Manaus, AM",
+        "available_times": ["08:00", "09:30", "11:00", "14:00", "16:00"]
+      }
+    }
+  ]
+}
