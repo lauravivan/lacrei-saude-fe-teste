@@ -1,3 +1,5 @@
+import Professionals from "./Professionals";
+
 export default function Page() {
-  return <div></div>;
+  return <Professionals />;
 }
