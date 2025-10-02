@@ -8,7 +8,7 @@ Este desafio também se conecta com os fluxos de Back-end e DevOps, simulando a 
 
 ## Technical document
 
-[]()
+[Technical document](https://kind-parent-217.notion.site/Lacrei-Saude-Desafio-T-cnico-27dfcc79429880a49031fb860c0ec2b5?pvs=73)
 
 ## Setup
 
