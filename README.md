@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Desafio Técnico – Front-end na Lacrei Saúde
 
-## Getting Started
+## Proposta do desafio
 
-First, run the development server:
+Sua missão será desenvolver duas páginas web interativas, com foco em **acessibilidade, responsividade, performance e impacto visual**, respeitando a identidade da Lacrei Saúde e nossa missão de garantir que cada pessoa se sinta segura ao buscar cuidado.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Este desafio também se conecta com os fluxos de Back-end e DevOps, simulando a realidade de desenvolvimento em produção.
+
+## Technical document
+
+[]()
+
+## Setup
+
+Para rodar o projeto localmente:
+
+```
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+```
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Para realizar o build do projeto rode:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+npm run build
+```
 
-## Learn More
+Para realizar o deploy do projeto rode:
 
-To learn more about Next.js, take a look at the following resources:
+## Testes
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Proposta de rollback
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+(ex: como restaurar uma versão anterior na plataforma de deploy)
 
-## Deploy on Vercel
+## Escolhas visuais e técnicas realizadas
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Proposta de rollback funcional
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+(ex: uso de preview deploy, versão anterior no Vercel)
+
+## Justificativas visuais e técnicas
