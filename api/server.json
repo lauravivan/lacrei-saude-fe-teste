@@ -2,6 +2,8 @@
   "professionals": [
     {
       "name": "Dra. Ana Silva",
+      "crm": "CRM-SP 0304",
+      "bio": "Como LGBTQIAPN+ que sou, além de achar super interessante e inovadora a ideia do projeto, quis fazer parte, primeiramente, para ajudar os meus iguais, mas também por ver a necessidade de profissionais que se importam conosco e com nossas necessidades. Sei que muita coisa mudou nos últimos anos, porém, por fazer parte de uma profissão, a meu ver, ainda preconceituosa e segregacionista, acho importante como profissional me dedicar a fazer a diferença, e mostrar que todos nós merecemos respeito em todos os tratamentos, respeitando a individualidade do nosso público.",
       "identity": {
         "race": "preta",
         "gender": "mulher trans",
@@ -23,6 +25,7 @@
     },
     {
       "name": "Dr. Rafael Souza",
+      "crm": "CRM-RJ 4821",
       "identity": {
         "race": "pardo",
         "gender": "homem cis",
@@ -44,6 +47,7 @@
     },
     {
       "name": "Dra. Camila Ferreira",
+      "crm": "CRM-MG 1590",
       "identity": {
         "race": "branca",
         "gender": "mulher cis",
@@ -65,6 +69,7 @@
     },
     {
       "name": "Dr. João Pereira",
+      "crm": "CRM-BA 7723",
       "identity": {
         "race": "indígena",
         "gender": "homem cis",
