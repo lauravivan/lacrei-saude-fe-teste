@@ -5,9 +5,17 @@ import { useQuery } from "@tanstack/react-query";
 import { getProfessionals } from "./_routes/getProfessionals";
 import { Professional as ProfessionalType } from "@/types/professional";
 import styled from "styled-components";
+import Title from "@/components/Title";
+import { useScreenSize } from "@/hooks/useScreenSize";
 
 const ProfessionalsMain = styled.main`
   width: 100%;
+
+  h2,
+  h3,
+  form {
+    margin: var(--spacing-inset-m) var(--spacing-inset-xm);
+  }
 
   .professionals__professionals {
     width: 100%;
@@ -15,6 +23,8 @@ const ProfessionalsMain = styled.main`
 `;
 
 export default function Professionals() {
+  const { isDesktop } = useScreenSize();
+
   const { data: professionals } = useQuery({
     queryKey: ["professionals"],
     refetchOnWindowFocus: false,
@@ -26,7 +36,7 @@ export default function Professionals() {
 
   return (
     <ProfessionalsMain>
-      <h3>Profissionais disponíveis</h3>
+      <Title number={isDesktop ? 2 : 3}>Profissionais disponíveis</Title>
       <form>
         <input placeholder="Buscar por nome, especialidade ou localização..." />
       </form>

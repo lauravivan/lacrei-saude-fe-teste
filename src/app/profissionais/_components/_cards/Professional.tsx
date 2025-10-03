@@ -9,6 +9,7 @@ import Title from "@/components/Title";
 import { Professional as ProfessionalType } from "@/types/professional";
 import styled from "styled-components";
 import Text from "@/components/Text";
+import BtnText from "@/components/button/BtnText";
 
 type ProfessionalsType = {
   professional: ProfessionalType;
@@ -16,7 +17,7 @@ type ProfessionalsType = {
 
 const ProfessionalCard = styled.article`
   display: flex;
-  padding: var(--spacing-inset-m) var(--spacing-inset-xm);
+  margin: var(--spacing-inset-m) var(--spacing-inset-xm);
   column-gap: 0 var(--spacing-inset-m);
 
   > div:nth-child(2) {
@@ -27,8 +28,9 @@ const ProfessionalCard = styled.article`
 
   .professional__identity {
     display: flex;
-    column-gap: var(--spacing-inline-xs);
+    gap: var(--spacing-inline-xs);
     margin-bottom: var(--spacing-inline-m);
+    flex-wrap: wrap;
   }
 
   .professional__services {
@@ -60,7 +62,9 @@ export default function Professional({ professional }: ProfessionalsType) {
           </details>
         </div>
         <div className="professional__services">
-          <button>Atendimentos</button>
+          <BtnText type="solid" color="emerald">
+            Atendimentos
+          </BtnText>
         </div>
       </div>
     </ProfessionalCard>
