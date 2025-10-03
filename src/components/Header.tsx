@@ -2,7 +2,9 @@ import Image from "next/image";
 import styled from "styled-components";
 import LogoHeader from "@/assets/img/logo/logo-header-mobile.svg";
 import { useScreenSize } from "@/hooks/useScreenSize";
-import HelpButton from "./button/HelpButton";
+import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
+import BtnIcon from "./button/BtnIcon";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const Header = styled.header`
   background-image: var(--gradient-subtle);
@@ -10,6 +12,24 @@ const Header = styled.header`
   align-items: center;
   padding: var(--spacing-m);
   justify-content: between;
+
+  > div:nth-child(2) {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+
+    .account {
+      display: flex;
+      align-items: center;
+    }
+
+    .avatar {
+      display: flex;
+      background-color: var(--emerald-20);
+      border-radius: var(--border-radius-circle);
+      size: 48px;
+    }
+  }
 
   .img-wrapper {
     width: 134px;
@@ -35,7 +55,15 @@ export default function HeaderComponent() {
         )}
       </div>
       <div>
-        <HelpButton />
+        <BtnIcon color="emerald" type="none">
+          <HelpOutlineIcon />
+        </BtnIcon>
+        <div className="account">
+          <div className="avatar">G</div>
+          <BtnIcon color="emerald" type="none">
+            <ExpandMoreIcon />
+          </BtnIcon>
+        </div>
       </div>
     </Header>
   );
