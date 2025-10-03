@@ -1,15 +1,16 @@
 {
   "professionals": [
     {
+      "id": "1",
       "name": "Dra. Ana Silva",
       "crm": "CRM-SP 0304",
       "bio": "Como LGBTQIAPN+ que sou, além de achar super interessante e inovadora a ideia do projeto, quis fazer parte, primeiramente, para ajudar os meus iguais, mas também por ver a necessidade de profissionais que se importam conosco e com nossas necessidades. Sei que muita coisa mudou nos últimos anos, porém, por fazer parte de uma profissão, a meu ver, ainda preconceituosa e segregacionista, acho importante como profissional me dedicar a fazer a diferença, e mostrar que todos nós merecemos respeito em todos os tratamentos, respeitando a individualidade do nosso público.",
       "identity": {
-        "race": "preta",
-        "gender": "mulher trans",
-        "sexuality": "lésbica"
+        "race": "Preta",
+        "gender": "Mulher Trans",
+        "sexuality": "Lésbica"
       },
-      "specialty": "endocrinologista",
+      "specialty": "Endocrinologista",
       "expertise": "Especialista em diabetes, obesidade e distúrbios hormonais com mais de 15 anos de experiência",
       "rating": 5.0,
       "experience_years": 15,
@@ -24,14 +25,15 @@
       }
     },
     {
+      "id": "2",
       "name": "Dr. Rafael Souza",
       "crm": "CRM-RJ 4821",
       "identity": {
-        "race": "pardo",
-        "gender": "homem cis",
-        "sexuality": "gay"
+        "race": "Parda",
+        "gender": "Homem Cis",
+        "sexuality": "Gay"
       },
-      "specialty": "psiquiatra",
+      "specialty": "Psiquiatra",
       "expertise": "Atuação em ansiedade, depressão e saúde mental LGBTQIA+",
       "rating": 4.8,
       "experience_years": 10,
@@ -46,14 +48,15 @@
       }
     },
     {
+      "id": "3",
       "name": "Dra. Camila Ferreira",
       "crm": "CRM-MG 1590",
       "identity": {
-        "race": "branca",
-        "gender": "mulher cis",
-        "sexuality": "bissexual"
+        "race": "Branca",
+        "gender": "Mulher Cis",
+        "sexuality": "Bissexual"
       },
-      "specialty": "ginecologista",
+      "specialty": "Ginecologista",
       "expertise": "Especialista em saúde reprodutiva, contracepção e pré-natal",
       "rating": 4.9,
       "experience_years": 12,
@@ -68,14 +71,15 @@
       }
     },
     {
+      "id": "4",
       "name": "Dr. João Pereira",
       "crm": "CRM-BA 7723",
       "identity": {
-        "race": "indígena",
-        "gender": "homem cis",
-        "sexuality": "heterossexual"
+        "race": "Indígena",
+        "gender": "Homem Cis",
+        "sexuality": "Hétero"
       },
-      "specialty": "clínico geral",
+      "specialty": "Clínico geral",
       "expertise": "Atendimento em atenção primária com foco em prevenção e saúde comunitária",
       "rating": 4.7,
       "experience_years": 8,
