@@ -2,14 +2,21 @@ import { Sexuality } from "@/types/sexuality";
 import BadgeBase, { BadgeType } from "./Badge";
 import { Ethnicity } from "@/types/ethnicity";
 import { GenderIdentity } from "@/types/genders";
-import LesbicFlag from "../icons/AssexualFlag";
-import BiFlag from "../icons/BiFlag";
-import DemiFlag from "../icons/DemiFlag";
-import GayFlag from "../icons/GayFlag";
-import StraightFlag from "../icons/StraightFlag";
-import AssexualFlag from "../icons/AssexualFlag";
-import OtherSexFlag from "../icons/OtherSexFlag";
-import PanFlag from "../icons/PanFlag";
+import LesbicFlag from "../icons/flags/AssexualFlag";
+import BiFlag from "../icons/flags/BiFlag";
+import DemiFlag from "../icons/flags/DemiFlag";
+import GayFlag from "../icons/flags/GayFlag";
+import StraightFlag from "../icons/flags/StraightFlag";
+import AssexualFlag from "../icons/flags/AssexualFlag";
+import PanFlag from "../icons/flags/PanFlag";
+import PeaceSign from "../icons/hands/PeaceSign";
+import AgenderFlag from "../icons/flags/AgenderFlag";
+import CisFlag from "../icons/flags/CisFlag";
+import GenderFluidFlag from "../icons/flags/GenderFluidFlag";
+import IntersexFlag from "../icons/flags/IntersexFlag";
+import NonBinaryFlag from "../icons/flags/NonBinaryFlag";
+import TransFlag from "../icons/flags/TransFlag";
+import OtherFlag from "../icons/flags/OtherFlag";
 
 type BadgeEthnicityType = {
   label: Ethnicity;
@@ -26,21 +33,13 @@ type BadgeGenderIdentityType = {
   //   size: 24 | 40;
 };
 
-function BadgeDiversity({
-  style,
-  type,
-  contentType,
-  text,
-  iconCode,
-  Img,
-}: BadgeType) {
+function BadgeDiversity({ style, type, contentType, text, Img }: BadgeType) {
   return (
     <BadgeBase
       type={type}
       style={style}
       contentType={contentType}
       text={text}
-      iconCode={iconCode}
       Img={Img}
     />
   );
@@ -53,7 +52,7 @@ export function BadgeEthnicity({ label }: BadgeEthnicityType) {
       style="solid"
       contentType="text+icon"
       text={label}
-      iconCode="\u270C\uFE0F"
+      Img={<PeaceSign color="#FFCC4D" />}
     />
   );
 
@@ -63,7 +62,7 @@ export function BadgeEthnicity({ label }: BadgeEthnicityType) {
       style="solid"
       contentType="text+icon"
       text={label}
-      iconCode="\u270C\uFE0F\uD83C\uDFFB"
+      Img={<PeaceSign color="#FADCBC" />}
     />
   );
 
@@ -73,7 +72,7 @@ export function BadgeEthnicity({ label }: BadgeEthnicityType) {
       style="solid"
       contentType="text+icon"
       text={label}
-      iconCode="\u270C\uFE0F\uD83C\uDFFD"
+      Img={<PeaceSign color="#BF8F68" />}
     />
   );
 
@@ -83,7 +82,7 @@ export function BadgeEthnicity({ label }: BadgeEthnicityType) {
       style="solid"
       contentType="text+icon"
       text={label}
-      iconCode="\u270C\uFE0F\uD83C\uDFFE"
+      Img={<PeaceSign color="#9B643D" />}
     />
   );
 
@@ -93,7 +92,7 @@ export function BadgeEthnicity({ label }: BadgeEthnicityType) {
       style="solid"
       contentType="text+icon"
       text={label}
-      iconCode="\u270C\uFE0F\uD83C\uDFFF"
+      Img={<PeaceSign color="#5C3D1E" />}
     />
   );
 
@@ -103,7 +102,7 @@ export function BadgeEthnicity({ label }: BadgeEthnicityType) {
       style="solid"
       contentType="text+icon"
       text={label}
-      iconCode="\u270C\uFE0F"
+      Img={<PeaceSign color="#C0C0C0" />}
     />
   );
 
@@ -177,7 +176,7 @@ export function BadgeSexuality({ label }: BadgeSexualityType) {
       style="solid"
       contentType="text+icon"
       text={label}
-      Img={<OtherSexFlag />}
+      Img={<OtherFlag />}
     />
   );
 
@@ -203,6 +202,7 @@ export function BadgeGenderIdentity({ label }: BadgeGenderIdentityType) {
       style="solid"
       contentType="text+icon"
       text={label}
+      Img={<AgenderFlag />}
     />
   );
 
@@ -212,6 +212,7 @@ export function BadgeGenderIdentity({ label }: BadgeGenderIdentityType) {
       style="solid"
       contentType="text+icon"
       text={label}
+      Img={<CisFlag />}
     />
   );
 
@@ -221,6 +222,7 @@ export function BadgeGenderIdentity({ label }: BadgeGenderIdentityType) {
       style="solid"
       contentType="text+icon"
       text={label}
+      Img={<CisFlag />}
     />
   );
 
@@ -230,7 +232,7 @@ export function BadgeGenderIdentity({ label }: BadgeGenderIdentityType) {
       style="solid"
       contentType="text+icon"
       text={label}
-      iconCode="\u270C\uFE0F\uD83C\uDFFE"
+      Img={<GenderFluidFlag />}
     />
   );
 
@@ -240,6 +242,7 @@ export function BadgeGenderIdentity({ label }: BadgeGenderIdentityType) {
       style="solid"
       contentType="text+icon"
       text={label}
+      Img={<IntersexFlag />}
     />
   );
 
@@ -249,6 +252,7 @@ export function BadgeGenderIdentity({ label }: BadgeGenderIdentityType) {
       style="solid"
       contentType="text+icon"
       text={label}
+      Img={<NonBinaryFlag />}
     />
   );
 
@@ -258,6 +262,7 @@ export function BadgeGenderIdentity({ label }: BadgeGenderIdentityType) {
       style="solid"
       contentType="text+icon"
       text={label}
+      Img={<OtherFlag />}
     />
   );
 
@@ -267,6 +272,7 @@ export function BadgeGenderIdentity({ label }: BadgeGenderIdentityType) {
       style="solid"
       contentType="text+icon"
       text={label}
+      Img={<TransFlag />}
     />
   );
 
@@ -276,6 +282,7 @@ export function BadgeGenderIdentity({ label }: BadgeGenderIdentityType) {
       style="solid"
       contentType="text+icon"
       text={label}
+      Img={<TransFlag />}
     />
   );
   return (

@@ -1,7 +1,6 @@
 import { useScreenSize } from "@/hooks/useScreenSize";
 import styled, { css } from "styled-components";
 import Text from "@/components/Text";
-import IconComponent from "../Icon";
 import { ReactNode } from "react";
 
 type Type = "success" | "default" | "error" | "info";
@@ -12,7 +11,6 @@ export type BadgeType = {
   style: "solid" | "outline";
   contentType: ContentType;
   text: string;
-  iconCode?: string;
   Img?: ReactNode | null;
 };
 
@@ -80,35 +78,30 @@ export default function BadgeBase({
   type,
   contentType,
   text,
-  iconCode,
   Img,
 }: BadgeType) {
   const { isDesktop } = useScreenSize();
 
   const primaryDesktop = style === "solid" && isDesktop && (
     <PrimaryBadgeDesktop type={type}>
-      {iconCode && <IconComponent code={iconCode} size={24} />}
       {Img}
       <Text variant="Text-base">{text}</Text>
     </PrimaryBadgeDesktop>
   );
   const secondaryDesktop = style === "outline" && isDesktop && (
     <SecondBadgeDesktop type={type}>
-      {iconCode && <IconComponent code={iconCode} size={24} />}
       {Img}
       <Text variant="Text-base">{text}</Text>
     </SecondBadgeDesktop>
   );
   const primaryMobile = style === "solid" && !isDesktop && (
     <PrimaryBadgeMobile type={type} contentType={contentType}>
-      {iconCode && <IconComponent code={iconCode} size={24} />}
       {Img}
       <Text variant="Text-base">{text}</Text>
     </PrimaryBadgeMobile>
   );
   const secondaryMobile = style === "solid" && !isDesktop && (
     <SecondBadgeMobile type={type} contentType={contentType}>
-      {iconCode && <IconComponent code={iconCode} size={24} />}
       {Img}
       <Text variant="Text-base">{text}</Text>
     </SecondBadgeMobile>
