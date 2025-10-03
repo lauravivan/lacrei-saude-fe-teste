@@ -13,11 +13,11 @@ type TextType = {
   children: string;
 };
 
-const Text = styled.p<{ fontSize: number; fontWeight: 400 | 700 | 600 }>`
+const Text = styled.p<{ fontSize: number; fontWeight: 400 | 700 | 500 }>`
   font-size: ${(fontSize) => fontSize + "px"};
   font-weight: ${({ fontWeight }) => fontWeight};
   line-height: 150%;
-  color: #000;
+  color: var(--emerald-10);
   margin: 0;
 `;
 
@@ -58,7 +58,7 @@ export default function TextComponent({ variant, children }: TextType) {
     </Text>
   );
   const text8 = variant === "Text-sm-high200" && (
-    <Text fontSize={14} fontWeight={600}>
+    <Text fontSize={14} fontWeight={500}>
       {children}
     </Text>
   );

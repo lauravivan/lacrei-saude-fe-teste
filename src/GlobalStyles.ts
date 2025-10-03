@@ -25,9 +25,16 @@ const GlobalStyles = createGlobalStyle`
       --red-70: #9B1717;
       --red-80: #6F1111;
 
+      /**green */
+      --green-10: #EBF9F0;
+
+      /** blue */
+      --blue-10: #EBF2F9;
+
       /** gray */
       --gray-10: #ffffff;
       --gray-20: #F0F0F0;
+      --gray-30: #CFCFCF;
 
       /** space primitives */
       --spacing-4-xs: 0.125rem;

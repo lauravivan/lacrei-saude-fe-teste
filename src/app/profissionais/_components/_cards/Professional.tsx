@@ -10,6 +10,7 @@ import { Professional as ProfessionalType } from "@/types/professional";
 import styled from "styled-components";
 import Text from "@/components/Text";
 import BtnText from "@/components/button/BtnText";
+import { BadgeService } from "@/components/badge/BadgeService";
 
 type ProfessionalsType = {
   professional: ProfessionalType;
@@ -18,7 +19,7 @@ type ProfessionalsType = {
 const ProfessionalCard = styled.article`
   display: flex;
   margin: var(--spacing-inset-m) var(--spacing-inset-xm);
-  column-gap: 0 var(--spacing-inset-m);
+  column-gap: var(--spacing-inset-m);
 
   > div:nth-child(2) {
     display: flex;
@@ -26,26 +27,56 @@ const ProfessionalCard = styled.article`
     width: 100%;
   }
 
-  .professional__identity {
-    display: flex;
-    gap: var(--spacing-inline-xs);
-    margin-bottom: var(--spacing-inline-m);
-    flex-wrap: wrap;
-  }
+  .professional {
+    &__info {
+      display: flex;
+      flex-direction: column;
 
-  .professional__services {
-    margin-left: auto;
+      h5 {
+        margin-bottom: var(--spacing-2-xs);
+      }
+    }
+
+    &__identity {
+      margin-top: var(--spacing-s);
+      display: flex;
+      gap: var(--spacing-inline-xs);
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: var(--spacing-inline-xs);
+    }
+
+    &__payment {
+      display: flex;
+      gap: var(--spacing-inline-xs);
+      margin-bottom: var(--spacing-inline-m);
+    }
+
+    &__services {
+      margin-left: auto;
+    }
+
+    &__picture {
+      img {
+        object-fit: cover;
+      }
+    }
   }
 `;
 
 export default function Professional({ professional }: ProfessionalsType) {
   return (
-    <ProfessionalCard>
-      <div>
-        <img />
+    <ProfessionalCard className="professional">
+      <div className="professional__picture">
+        <img
+          width={100}
+          height={100}
+          src={`./professionals/${professional.picture}.webp`}
+          alt={`Foto da pessoa ${professional.name}`}
+        />
       </div>
       <div>
-        <div>
+        <div className="professional__info">
           <Title number={5}>{professional.name}</Title>
           <Text variant="Text-sm-high200">
             {`${professional.specialty}, ${professional.crm}`}
@@ -55,7 +86,11 @@ export default function Professional({ professional }: ProfessionalsType) {
             <BadgeGenderIdentity label={professional.identity.gender} />
             <BadgeSexuality label={professional.identity.sexuality} />
           </div>
-          <div></div>
+          <div className="professional__payment">
+            {professional.payment_options.map((po) => (
+              <BadgeService key={po} text={po} />
+            ))}
+          </div>
           <details>
             <summary>Informações</summary>
             <Text variant="Text-base">{professional.bio}</Text>

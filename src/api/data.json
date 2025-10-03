@@ -22,7 +22,9 @@
         "price": "R$ 450,00",
         "address": "Av. Paulista, 1000 - São Paulo, SP",
         "available_times": ["08:00", "09:00", "10:00", "14:00", "15:00"]
-      }
+      },
+      "payment_options": ["Convênio", "Particular"],
+      "picture": "pro-example"
     },
     {
       "id": "2",
@@ -46,7 +48,9 @@
         "price": "R$ 350,00",
         "address": "Rua do Catete, 200 - Rio de Janeiro, RJ",
         "available_times": ["09:00", "11:00", "13:00", "16:00", "18:00"]
-      }
+      },
+      "payment_options": ["Convênio"],
+      "picture": "pro-example"
     },
     {
       "id": "3",
@@ -70,7 +74,9 @@
         "price": "R$ 400,00",
         "address": "Rua Barão de Itapura, 1500 - Campinas, SP",
         "available_times": ["08:00", "10:00", "14:00", "15:00", "17:00"]
-      }
+      },
+      "payment_options": ["Particular"],
+      "picture": "pro-example"
     },
     {
       "id": "4",
@@ -94,7 +100,9 @@
         "price": "R$ 250,00",
         "address": "Av. Sete de Setembro, 300 - Manaus, AM",
         "available_times": ["08:00", "09:30", "11:00", "14:00", "16:00"]
-      }
+      },
+      "payment_options": ["Convênio", "Particular"],
+      "picture": "pro-example"
     }
   ]
 }

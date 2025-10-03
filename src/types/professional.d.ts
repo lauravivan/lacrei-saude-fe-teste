@@ -29,4 +29,6 @@ interface Professional {
   languages: string[];
   phone: string;
   consultation_info: ConsultationInfo;
+  payment_options: ["Convênio", "Particular"];
+  picture: string;
 }

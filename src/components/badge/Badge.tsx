@@ -15,10 +15,10 @@ export type BadgeType = {
 };
 
 function getColor(type: Type) {
-  const success = type === "success" && "";
+  const success = type === "success" && "var(--green-10)";
   const defaultType = type === "default" && "var(--gray-20)";
-  const errorType = type === "error" && "";
-  const info = type === "info" && "";
+  const errorType = type === "error" && "var(--red-20)";
+  const info = type === "info" && "var(--blue-10)";
 
   return success || defaultType || errorType || info;
 }

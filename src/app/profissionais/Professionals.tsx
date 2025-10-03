@@ -17,8 +17,13 @@ const ProfessionalsMain = styled.main`
     margin: var(--spacing-inset-m) var(--spacing-inset-xm);
   }
 
-  .professionals__professionals {
-    width: 100%;
+  .professionals {
+    &__professionals {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      row-gap: var(--spacing-l);
+    }
   }
 `;
 
@@ -35,7 +40,7 @@ export default function Professionals() {
   });
 
   return (
-    <ProfessionalsMain>
+    <ProfessionalsMain className="professionals">
       <Title number={isDesktop ? 2 : 3}>Profissionais disponíveis</Title>
       <form>
         <input placeholder="Buscar por nome, especialidade ou localização..." />
