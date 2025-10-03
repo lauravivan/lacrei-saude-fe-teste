@@ -7,13 +7,14 @@ import { Professional as ProfessionalType } from "@/types/professional";
 import styled from "styled-components";
 import Title from "@/components/Title";
 import { useScreenSize } from "@/hooks/useScreenSize";
+import Text from "@/components/Text";
 
 const ProfessionalsMain = styled.main`
   width: 100%;
 
   h2,
   h3,
-  form {
+  > p {
     margin: var(--spacing-inset-m) var(--spacing-inset-xm);
   }
 
@@ -42,9 +43,11 @@ export default function Professionals() {
   return (
     <ProfessionalsMain className="professionals">
       <Title number={isDesktop ? 2 : 3}>Profissionais disponíveis</Title>
-      <form>
-        <input placeholder="Buscar por nome, especialidade ou localização..." />
-      </form>
+      {professionals && (
+        <Text variant="Text-base">
+          {`${professionals.length} pessoas professionais encontradas`}
+        </Text>
+      )}
       <div className="professionals__professionals">
         {professionals && professionals.length > 0 ? (
           professionals.map((professional: ProfessionalType) => (
@@ -54,7 +57,9 @@ export default function Professionals() {
             ></Professional>
           ))
         ) : (
-          <div></div>
+          <Text variant="Text-base">
+            Não foram encontradas pessoas profissionais
+          </Text>
         )}
       </div>
     </ProfessionalsMain>
