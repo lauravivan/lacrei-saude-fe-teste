@@ -1,7 +1,11 @@
+import { Ethnicity } from "./ethnicity";
+import { GenderIdentity } from "./genders";
+import { Sexuality } from "./sexuality";
+
 interface Identity {
-  race: string;
-  gender: string;
-  sexuality: string;
+  race: Ethnicity;
+  gender: GenderIdentity;
+  sexuality: Sexuality;
 }
 
 interface ConsultationInfo {
@@ -12,6 +16,7 @@ interface ConsultationInfo {
 }
 
 interface Professional {
+  id: string;
   name: string;
   crm: string;
   bio: string;
