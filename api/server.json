@@ -28,6 +28,7 @@
       "id": "2",
       "name": "Dr. Rafael Souza",
       "crm": "CRM-RJ 4821",
+      "bio": "Escolhi a medicina porque sempre acreditei que cuidar é um ato de amor e resistência. Como pessoa negra, sei o quanto a desigualdade afeta o acesso à saúde e, por isso, quero ser ponte entre conhecimento técnico e acolhimento humano. Meu objetivo é oferecer não apenas tratamento, mas também escuta e respeito às histórias de cada paciente.",
       "identity": {
         "race": "Parda",
         "gender": "Homem Cis",
@@ -51,6 +52,7 @@
       "id": "3",
       "name": "Dra. Camila Ferreira",
       "crm": "CRM-MG 1590",
+      "bio": "Acredito que a saúde vai além do corpo físico — envolve identidade, contexto e vivências únicas. Ao longo da minha trajetória, percebi como o olhar inclusivo pode transformar o cuidado. Meu compromisso é construir um espaço seguro, onde cada paciente se sinta valorizado, reconhecido e respeitado em sua individualidade.",
       "identity": {
         "race": "Branca",
         "gender": "Fluído",
@@ -74,6 +76,7 @@
       "id": "4",
       "name": "Dr. João Pereira",
       "crm": "CRM-BA 7723",
+      "bio": "Desde cedo entendi que a medicina precisava ser mais diversa e representativa. Trabalhar com saúde não é apenas aplicar protocolos, mas enxergar pessoas em sua totalidade. Quero ser parte da mudança que torna o sistema de saúde mais humano, inclusivo e consciente das diferentes realidades sociais.",
       "identity": {
         "race": "Indígena",
         "gender": "Não Binária",
