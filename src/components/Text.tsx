@@ -14,7 +14,7 @@ type TextType = {
 };
 
 const Text = styled.p<{ fontSize: number; fontWeight: 400 | 700 | 500 }>`
-  font-size: ${(fontSize) => fontSize + "px"};
+  font-size: ${({ fontSize }) => fontSize + "px"};
   font-weight: ${({ fontWeight }) => fontWeight};
   line-height: 150%;
   color: var(--emerald-10);

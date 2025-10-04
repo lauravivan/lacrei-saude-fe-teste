@@ -86,6 +86,13 @@ const GlobalStyles = createGlobalStyle`
       --border-radius-none: none;
       --border-radius-pill: 60px;
       --border-radius-circle: 50%;
+
+      /** border-width */
+      --border-width-none: 0px;
+      --border-width-sm: 1px;
+      --border-width-md: 2px;
+      --border-width-lg: 4px;
+      --border-width-xl: 8px;
     }
 
     html, body {

@@ -1,16 +1,20 @@
 import Image from "next/image";
 import styled from "styled-components";
 import LogoHeader from "@/assets/img/logo/logo-header-mobile.svg";
+import LogoHeaderDesktop from "@/assets/img/logo/logo-header-desktop.svg";
 import { useScreenSize } from "@/hooks/useScreenSize";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import BtnIcon from "./button/BtnIcon";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
-const Header = styled.header`
+const Header = styled.header<{ isDesktop: boolean }>`
   background-image: var(--gradient-subtle);
   display: flex;
   align-items: center;
-  padding: var(--spacing-m);
+  padding: ${({ isDesktop }) =>
+    isDesktop
+      ? "var(--spacing-m) var(--spacing-layout-xl)"
+      : "var(--spacing-m)"};
   justify-content: between;
 
   > div:nth-child(2) {
@@ -28,6 +32,7 @@ const Header = styled.header`
       background-color: var(--emerald-20);
       border-radius: var(--border-radius-circle);
       size: 48px;
+      padding: var(--spacing-xs) var(--spacing-s);
     }
   }
 
@@ -41,10 +46,15 @@ export default function HeaderComponent() {
   const { isDesktop } = useScreenSize();
 
   return (
-    <Header>
+    <Header isDesktop={isDesktop}>
       <div className="img-wrapper">
         {isDesktop ? (
-          <div></div>
+          <Image
+            src={LogoHeaderDesktop}
+            alt="Logo Lacrei Saúde"
+            width={187}
+            height={24}
+          />
         ) : (
           <Image
             src={LogoHeader}
@@ -55,12 +65,12 @@ export default function HeaderComponent() {
         )}
       </div>
       <div>
-        <BtnIcon color="emerald" type="none">
+        <BtnIcon color="emerald" type="none" ariaLabel="Botão de ajuda">
           <HelpOutlineIcon />
         </BtnIcon>
         <div className="account">
           <div className="avatar">G</div>
-          <BtnIcon color="emerald" type="none">
+          <BtnIcon color="emerald" type="none" ariaLabel="Expandir">
             <ExpandMoreIcon />
           </BtnIcon>
         </div>

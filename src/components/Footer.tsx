@@ -6,6 +6,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import LinkText from "./link/LinkText";
 import DividerComponent from "./Divider";
+import BtnIcon from "./button/BtnIcon";
 
 const Footer = styled.footer`
   display: flex;
@@ -60,16 +61,24 @@ export default function FooterComponent() {
         </ul>
         <ul className="footer__social-media">
           <li>
-            <FacebookOutlinedIcon />
+            <BtnIcon color="emerald" type="none" ariaLabel="Ícone do Facebook">
+              <FacebookOutlinedIcon />
+            </BtnIcon>
           </li>
           <li>
-            <InstagramIcon />
+            <BtnIcon color="emerald" type="none" ariaLabel="Ícone do Instagram">
+              <InstagramIcon />
+            </BtnIcon>
           </li>
           <li>
-            <LinkedInIcon />
+            <BtnIcon color="emerald" type="none" ariaLabel="Ícone do Linkedin">
+              <LinkedInIcon />
+            </BtnIcon>
           </li>
           <li>
-            <EmailOutlinedIcon />
+            <BtnIcon color="emerald" type="none" ariaLabel="Ícone de Email">
+              <EmailOutlinedIcon />
+            </BtnIcon>
           </li>
         </ul>
         <Text variant="Text-base">CNPJ: 51.265.351/0001-65</Text>

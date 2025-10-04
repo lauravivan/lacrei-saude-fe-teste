@@ -45,7 +45,7 @@ export default function Professionals() {
       <Title number={isDesktop ? 2 : 3}>Profissionais disponíveis</Title>
       {professionals && (
         <Text variant="Text-base">
-          {`${professionals.length} pessoas professionais encontradas`}
+          {`${professionals.length} pessoas profissionais encontradas`}
         </Text>
       )}
       <div className="professionals__professionals">

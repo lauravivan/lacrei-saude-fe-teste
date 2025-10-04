@@ -26,6 +26,12 @@ function getColor(type: Type) {
 const Badge = css`
   display: flex;
   width: max-content;
+
+  svg {
+    width: 24px;
+    height: 24px;
+    border-radius: var(--border-radius-sm);
+  }
 `;
 
 const BadgeDesktop = css`
@@ -85,25 +91,25 @@ export default function BadgeBase({
   const primaryDesktop = style === "solid" && isDesktop && (
     <PrimaryBadgeDesktop type={type}>
       {Img}
-      <Text variant="Text-base">{text}</Text>
+      <Text variant="Text-xs">{text}</Text>
     </PrimaryBadgeDesktop>
   );
   const secondaryDesktop = style === "outline" && isDesktop && (
     <SecondBadgeDesktop type={type}>
       {Img}
-      <Text variant="Text-base">{text}</Text>
+      <Text variant="Text-xs">{text}</Text>
     </SecondBadgeDesktop>
   );
   const primaryMobile = style === "solid" && !isDesktop && (
     <PrimaryBadgeMobile type={type} contentType={contentType}>
       {Img}
-      <Text variant="Text-base">{text}</Text>
+      <Text variant="Text-xs">{text}</Text>
     </PrimaryBadgeMobile>
   );
   const secondaryMobile = style === "solid" && !isDesktop && (
     <SecondBadgeMobile type={type} contentType={contentType}>
       {Img}
-      <Text variant="Text-base">{text}</Text>
+      <Text variant="Text-xs">{text}</Text>
     </SecondBadgeMobile>
   );
 

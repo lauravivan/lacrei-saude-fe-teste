@@ -8,6 +8,7 @@ type BtnDefaultTypes = {
   children: ReactNode;
   type: BtnType;
   color: BtnColor;
+  ariaLabel?: string;
 };
 
 const Button = css`
@@ -31,6 +32,10 @@ const SolidBtn = styled.button<{ color: string }>`
 
 const OutlineBtn = styled.button<{ color: string }>`
   ${Button}
+  color: ${({ color }) => `var(--${color}-60)`};
+  border-color: ${({ color }) => `var(--${color}-60)`};
+  border-width: var(--border-width-md);
+  border-style: solid;
 
   svg {
     fill: ${({ color }) => `var(--${color}-60)`};
@@ -39,6 +44,9 @@ const OutlineBtn = styled.button<{ color: string }>`
 
 const GhostBtn = styled.button<{ color: string }>`
   ${Button}
+  width: 48px;
+  text-align: center;
+  padding: var(--spacing-inset-sm);
 
   svg {
     fill: ${({ color }) => `var(--${color}-60)`};
@@ -49,15 +57,22 @@ export default function BtnDefault({
   children,
   type,
   color = "emerald",
+  ariaLabel,
 }: BtnDefaultTypes) {
   const solid = type === "solid" && (
-    <SolidBtn color={color}>{children}</SolidBtn>
+    <SolidBtn aria-label={ariaLabel} color={color}>
+      {children}
+    </SolidBtn>
   );
   const outline = type === "outline" && (
-    <OutlineBtn color={color}>{children}</OutlineBtn>
+    <OutlineBtn aria-label={ariaLabel} color={color}>
+      {children}
+    </OutlineBtn>
   );
   const ghost = type === "none" && (
-    <GhostBtn color={color}>{children}</GhostBtn>
+    <GhostBtn aria-label={ariaLabel} color={color}>
+      {children}
+    </GhostBtn>
   );
 
   return solid || outline || ghost;
