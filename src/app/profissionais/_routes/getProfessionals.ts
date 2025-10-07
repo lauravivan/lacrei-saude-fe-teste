@@ -1,15 +1,8 @@
-"use server";
-
-import axios from "axios";
-
 export async function getProfessionals() {
   try {
-    const res = await axios({
-      url: `${process.env.BACKEND_URL}/professionals`,
-    });
-
-    return res.data;
+    const res = await fetch(`/api/professionals`);
+    return await res.json();
   } catch (e) {
-    console.log("deu ruim", e);
+    console.log("An error occurred when trying to search for professionals", e);
   }
 }
