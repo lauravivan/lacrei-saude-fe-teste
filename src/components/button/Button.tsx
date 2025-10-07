@@ -70,17 +70,25 @@ export default function Button({
   ariaLabel,
 }: ButtonType) {
   const solid = type === "solid" && (
-    <SolidBtnContainer color={color}>
+    <SolidBtnContainer color={color} className="btn-container">
       <button aria-label={ariaLabel}>{children}</button>
     </SolidBtnContainer>
   );
   const outline = type === "outline" && (
-    <OutlineBtnContainer aria-label={ariaLabel} color={color}>
+    <OutlineBtnContainer
+      aria-label={ariaLabel}
+      color={color}
+      className="btn-container"
+    >
       <button aria-label={ariaLabel}>{children}</button>
     </OutlineBtnContainer>
   );
   const ghost = type === "none" && (
-    <GhostBtnContainer aria-label={ariaLabel} color={color}>
+    <GhostBtnContainer
+      aria-label={ariaLabel}
+      color={color}
+      className="btn-container"
+    >
       <button aria-label={ariaLabel}>{children}</button>
     </GhostBtnContainer>
   );
@@ -96,21 +104,21 @@ export function ButtonLink({
   href,
 }: ButtonType & { href?: string }) {
   const solid = type === "solid" && (
-    <SolidBtnContainer color={color}>
+    <SolidBtnContainer color={color} className="btn-container">
       <a aria-label={ariaLabel} href={href} target="_blank">
         {children}
       </a>
     </SolidBtnContainer>
   );
   const outline = type === "outline" && (
-    <OutlineBtnContainer color={color}>
+    <OutlineBtnContainer color={color} className="btn-container">
       <a aria-label={ariaLabel} href={href} target="_blank">
         {children}
       </a>
     </OutlineBtnContainer>
   );
   const ghost = type === "none" && (
-    <GhostBtnContainer color={color}>
+    <GhostBtnContainer color={color} className="btn-container">
       <a aria-label={ariaLabel} href={href} target="_blank">
         {children}
       </a>

@@ -79,7 +79,8 @@ const ProfessionalCard = styled.article<{ isDesktop: boolean }>`
       text-align: center;
       margin-left: ${({ isDesktop }) => (isDesktop ? "auto" : 0)};
 
-      button {
+      .btn-container,
+      .btn-container button {
         flex: ${({ isDesktop }) => (isDesktop ? "auto" : 1)};
       }
     }
