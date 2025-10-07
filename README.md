@@ -6,13 +6,13 @@ Sua missão será desenvolver duas páginas web interativas, com foco em **acess
 
 Este desafio também se conecta com os fluxos de Back-end e DevOps, simulando a realidade de desenvolvimento em produção.
 
-## Technical document
+## Documento de especificações técnicas
 
-[Technical document](https://kind-parent-217.notion.site/Lacrei-Saude-Desafio-T-cnico-27dfcc79429880a49031fb860c0ec2b5?pvs=73)
+[Documento de especificações técnicas](https://kind-parent-217.notion.site/Lacrei-Saude-Desafio-T-cnico-27dfcc79429880a49031fb860c0ec2b5?pvs=73)
 
-## Link to access project
+## Link para acessar o projeto
 
-[Lacrei Saúde project](https://lacrei-saude-fe-teste.vercel.app/)
+[Plataforma Lacrei Saúde](https://lacrei-saude-fe-teste.vercel.app/)
 
 ## Setup
 
