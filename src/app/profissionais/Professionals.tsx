@@ -10,7 +10,8 @@ import { useScreenSize } from "@/hooks/useScreenSize";
 import Text from "@/components/Text";
 
 const ProfessionalsMain = styled.main`
-  width: 100%;
+  width: 90%;
+  margin: 0 auto;
 
   h2,
   h3,

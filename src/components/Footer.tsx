@@ -1,88 +1,152 @@
 import styled from "styled-components";
 import Text from "@/components/Text";
-import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import LinkText from "./link/LinkText";
 import DividerComponent from "./Divider";
 import BtnIcon from "./button/BtnIcon";
+import { useScreenSize } from "@/hooks/useScreenSize";
+import LogoFooter from "@/assets/img/logo/logo-footer-desktop.svg";
+import Image from "next/image";
+import Facebook from "./icons/social-media/Facebook";
+import Instagram from "./icons/social-media/Instagram";
+import Linkedin from "./icons/social-media/Linkedin";
+import Mail from "./icons/Mail";
 
-const Footer = styled.footer`
+const Footer = styled.footer<{ isDesktop: boolean }>`
   display: flex;
   flex-direction: column;
-  row-gap: var(--spacing-m);
-  margin-top: var(--spacing-m);
-  padding: 0 var(--spacing-m) var(--spacing-m);
+  justify-content: space-around;
+  max-width: 90%;
+  margin: 0 auto;
 
-  ul {
-    padding-left: 0;
-    list-style: none;
+  .footer__content {
     display: flex;
-  }
+    flex-direction: ${({ isDesktop }) => (isDesktop ? "row" : "column")};
+    row-gap: var(--spacing-m);
+    margin-top: ${({ isDesktop }) =>
+      isDesktop ? "var(--spacing-l)" : "var(--spacing-m)"};
+    padding: 0 var(--spacing-m) var(--spacing-m);
+    margin-bottom: var(--spacing-m);
+    column-gap: var(--spacing-layout-2-xl);
 
-  ul:first-of-type {
-    flex-direction: column;
-    row-gap: var(--spacing-2-xs);
-  }
+    > div {
+      display: flex;
+      flex-direction: column;
+      row-gap: var(--spacing-m);
 
-  .footer {
-    &__social-media {
+      ul {
+        padding-left: 0;
+        list-style: none;
+        display: flex;
+      }
+
+      .footer__menu {
+        row-gap: var(--spacing-2-xs);
+        flex-direction: ${({ isDesktop }) => (isDesktop ? "row" : "column")};
+        justify-content: space-between;
+        column-gap: var(--spacing-m);
+      }
+
+      > div {
+        display: flex;
+        flex-direction: ${({ isDesktop }) => (isDesktop ? "row" : "column")};
+        justify-content: space-between;
+        align-items: ${({ isDesktop }) => (isDesktop ? "center" : "auto")};
+
+        .footer__social-media {
+        }
+      }
     }
   }
 `;
 
 export default function FooterComponent() {
+  const { isDesktop } = useScreenSize();
+
   return (
-    <>
+    <Footer className="footer" isDesktop={isDesktop}>
       <DividerComponent margin="0 var(--spacing-m)"></DividerComponent>
-      <Footer className="footer">
-        <ul>
-          <li>
-            <LinkText type="secondary" href="#">
-              Lacrei Saúde
-            </LinkText>
-          </li>
-          <li>
-            <LinkText type="secondary" href="/profissionais">
-              Pessoas Profissionais
-            </LinkText>
-          </li>
-          <li>
-            <LinkText type="secondary" href="#">
-              Política de privacidade
-            </LinkText>
-          </li>
-          <li>
-            <LinkText type="secondary" href="#">
-              Termos de Uso
-            </LinkText>
-          </li>
-        </ul>
-        <ul className="footer__social-media">
-          <li>
-            <BtnIcon color="emerald" type="none" ariaLabel="Ícone do Facebook">
-              <FacebookOutlinedIcon />
-            </BtnIcon>
-          </li>
-          <li>
-            <BtnIcon color="emerald" type="none" ariaLabel="Ícone do Instagram">
-              <InstagramIcon />
-            </BtnIcon>
-          </li>
-          <li>
-            <BtnIcon color="emerald" type="none" ariaLabel="Ícone do Linkedin">
-              <LinkedInIcon />
-            </BtnIcon>
-          </li>
-          <li>
-            <BtnIcon color="emerald" type="none" ariaLabel="Ícone de Email">
-              <EmailOutlinedIcon />
-            </BtnIcon>
-          </li>
-        </ul>
-        <Text variant="Text-base">CNPJ: 51.265.351/0001-65</Text>
-      </Footer>
-    </>
+      <div className="footer__content">
+        {isDesktop && (
+          <Image
+            src={LogoFooter}
+            alt="Logo Lacrei Saúde"
+            width={170}
+            height={48}
+          />
+        )}
+        <div>
+          <ul className="footer__menu">
+            <li>
+              <LinkText type="secondary" href="#">
+                Lacrei Saúde
+              </LinkText>
+            </li>
+            <li>
+              <LinkText type="secondary" href="/profissionais">
+                Pessoas Profissionais
+              </LinkText>
+            </li>
+            <li>
+              <LinkText type="secondary" href="#">
+                Política de privacidade
+              </LinkText>
+            </li>
+            <li>
+              <LinkText type="secondary" href="#">
+                Termos de Uso
+              </LinkText>
+            </li>
+          </ul>
+          <div>
+            <ul className="footer__social-media">
+              <li>
+                <BtnIcon
+                  color="emerald"
+                  type="none"
+                  ariaLabel="facebook site externo - abrirá uma nova janela"
+                  isLink={true}
+                  href="https://www.facebook.com/lacrei.saude/"
+                >
+                  <Facebook />
+                </BtnIcon>
+              </li>
+              <li>
+                <BtnIcon
+                  color="emerald"
+                  type="none"
+                  ariaLabel="instagram site externo - abrirá uma nova janela"
+                  isLink={true}
+                  href="https://www.instagram.com/lacrei.saude/"
+                >
+                  <Instagram />
+                </BtnIcon>
+              </li>
+              <li>
+                <BtnIcon
+                  color="emerald"
+                  type="none"
+                  ariaLabel="linkedin site externo - abrirá uma nova janela"
+                  isLink={true}
+                  href="https://linkedin.com/company/lacrei/"
+                >
+                  <Linkedin />
+                </BtnIcon>
+              </li>
+              <li>
+                <BtnIcon
+                  color="emerald"
+                  type="none"
+                  ariaLabel="e-mail site externo - abrirá uma nova janela com seu e-mail como remetente e a lacrei saúde como destinatário"
+                  isLink={true}
+                >
+                  <Mail />
+                </BtnIcon>
+              </li>
+            </ul>
+            <Text variant="Text-base">CNPJ: 51.265.351/0001-65</Text>
+          </div>
+        </div>
+      </div>
+    </Footer>
   );
 }

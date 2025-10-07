@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { ReactNode } from "react";
 import styled from "styled-components";
 
@@ -19,6 +18,9 @@ const SecondaryLink = styled.a`
   text-decoration: none;
   min-height: 48px;
   height: auto;
+  display: inline-block;
+  line-height: 48px;
+  vertical-align: middle;
 
   &:hover {
     text-decoration: underline;

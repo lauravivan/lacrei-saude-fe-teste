@@ -1,11 +1,13 @@
 import { ReactNode } from "react";
-import BtnDefault, { BtnColor, BtnType } from "./Button";
+import Button, { BtnColor, BtnType, ButtonLink } from "./Button";
 
 type BtnIconType = {
   children: ReactNode;
   type: BtnType;
   color: BtnColor;
   ariaLabel: string;
+  isLink?: boolean;
+  href?: string;
 };
 
 export default function BtnIcon({
@@ -13,10 +15,16 @@ export default function BtnIcon({
   type,
   color,
   ariaLabel,
+  isLink = false,
+  href,
 }: BtnIconType) {
-  return (
-    <BtnDefault type={type} color={color} ariaLabel={ariaLabel}>
+  return isLink ? (
+    <ButtonLink type={type} color={color} ariaLabel={ariaLabel} href={href}>
       {children}
-    </BtnDefault>
+    </ButtonLink>
+  ) : (
+    <Button type={type} color={color} ariaLabel={ariaLabel}>
+      {children}
+    </Button>
   );
 }
