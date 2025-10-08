@@ -1,4 +1,4 @@
-import Professionals from "./profissionais/Professionals";
+import Professionals from "./(user)/profissionais/Professionals";
 
 export default function Page() {
   return <Professionals />;

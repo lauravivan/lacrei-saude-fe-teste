@@ -1,5 +1,3 @@
-"use client";
-
 import {
   BadgeEthnicity,
   BadgeGenderIdentity,
@@ -12,6 +10,7 @@ import Text from "@/components/Text";
 import BtnText from "@/components/button/BtnText";
 import { BadgeService } from "@/components/badge/BadgeService";
 import { useScreenSize } from "@/hooks/useScreenSize";
+import Image from "next/image";
 
 type ProfessionalsType = {
   professional: ProfessionalType;
@@ -95,10 +94,10 @@ export default function Professional({ professional }: ProfessionalsType) {
       <div className="professional__info">
         <div>
           <div className="professional__info__picture">
-            <img
+            <Image
               width={100}
               height={100}
-              src={`./professionals/${professional.picture}.webp`}
+              src={`/professionals/${professional.picture}.webp`}
               alt={`Foto da pessoa ${professional.name}`}
             />
           </div>

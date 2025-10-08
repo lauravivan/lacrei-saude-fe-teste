@@ -1,6 +1,6 @@
 "use client";
 
-import Professional from "./_components/_cards/Professional";
+import Professional from "./_components/cards/Professional";
 import { useQuery } from "@tanstack/react-query";
 import { getProfessionals } from "./_routes/getProfessionals";
 import { Professional as ProfessionalType } from "@/types/professional";
