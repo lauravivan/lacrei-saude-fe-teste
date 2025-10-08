@@ -10,8 +10,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
-    "prepare": "husky",
-    "commit": "git-cz"
+    "prepare": "husky"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.90.2",
@@ -31,7 +30,6 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@vitejs/plugin-react": "^5.0.4",
-    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^9",
     "eslint-config-next": "15.5.4",
     "husky": "^9.1.7",
