@@ -14,7 +14,10 @@ interface ButtonProps {
 const button = css`
   button,
   a {
-    all: unset;
+    background-color: transparent;
+    color: inherit;
+    border: none;
+    text-decoration: none;
     cursor: pointer;
     display: flex;
     align-items: center;

@@ -43,8 +43,11 @@ export default function Professionals() {
 
   return (
     <>
+      <a href="#main-content" className="skiplink">
+        Ir para o conteúdo principal
+      </a>
       <HeaderSignOut showSignOut={true} showPopover={true} showSearch={true} />
-      <ProfessionalsMain className="professionals">
+      <ProfessionalsMain className="professionals" id="main-content">
         {professionals && (
           <Text variant="Text-base">
             {`Encontramos ${professionals.length} resultados`}

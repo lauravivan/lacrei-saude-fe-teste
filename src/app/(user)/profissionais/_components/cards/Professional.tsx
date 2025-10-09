@@ -55,7 +55,7 @@ const ProfessionalCard = styled.article<{ isDesktop: boolean }>`
 
         > div:first-of-type {
           display: ${({ isDesktop }) => (isDesktop ? "block" : "none")};
-          width: calc(100px + 16px);
+          width: calc(60px + 16px);
         }
       }
     }
