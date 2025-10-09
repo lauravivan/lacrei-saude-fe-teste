@@ -5,13 +5,12 @@ import { useQuery } from "@tanstack/react-query";
 import { getProfessionals } from "./_routes/getProfessionals";
 import { Professional as ProfessionalType } from "@/types/professional";
 import styled from "styled-components";
-import Title from "@/components/Title";
 import { useScreenSize } from "@/hooks/useScreenSize";
 import Text from "@/components/Text";
 import HeaderSignOut from "@/components/header/HeaderSignOut";
+import Footer from "@/components/footer/Footer";
 
 const ProfessionalsMain = styled.main`
-  width: 90%;
   margin: 0 auto;
 
   h2,
@@ -25,7 +24,7 @@ const ProfessionalsMain = styled.main`
       width: 100%;
       display: flex;
       flex-direction: column;
-      row-gap: var(--spacing-l);
+      row-gap: var(--spacing-inset-xxs);
     }
   }
 `;
@@ -46,10 +45,9 @@ export default function Professionals() {
     <>
       <HeaderSignOut showSignOut={true} showPopover={true} showSearch={true} />
       <ProfessionalsMain className="professionals">
-        <Title number={isDesktop ? 2 : 3}>Profissionais disponíveis</Title>
         {professionals && (
           <Text variant="Text-base">
-            {`${professionals.length} pessoas profissionais encontradas`}
+            {`Encontramos ${professionals.length} resultados`}
           </Text>
         )}
         <div className="professionals__professionals">
@@ -67,6 +65,7 @@ export default function Professionals() {
           )}
         </div>
       </ProfessionalsMain>
+      <Footer />
     </>
   );
 }

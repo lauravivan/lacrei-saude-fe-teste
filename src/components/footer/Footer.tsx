@@ -4,18 +4,18 @@ import { useScreenSize } from "@/hooks/useScreenSize";
 import LogoFooter from "@/assets/img/logo/logo-footer-desktop.svg";
 import Image from "next/image";
 import Divider from "@/components/Divider";
-import BtnIcon from "@/components/button/BtnIcon";
 import Facebook from "@/components/icons/social-media/Facebook";
 import Mail from "@/components/icons/Mail";
 import Linkedin from "@/components/icons/social-media/Linkedin";
 import Instagram from "@/components/icons/social-media/Instagram";
 import LinkText from "@/components/link/LinkText";
+import BtnLinkIcon from "../button/BtnLinkIcon";
 
 const Footer = styled.footer<{ isDesktop: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  max-width: 90%;
+  max-width: 95%;
   margin: 0 auto;
 
   .footer__content {
@@ -100,47 +100,44 @@ export default function FooterComponent() {
           <div>
             <ul className="footer__social-media">
               <li>
-                <BtnIcon
+                <BtnLinkIcon
                   color="emerald"
                   type="none"
                   ariaLabel="facebook site externo - abrirá uma nova janela"
-                  isLink={true}
                   href="https://www.facebook.com/lacrei.saude/"
                 >
                   <Facebook />
-                </BtnIcon>
+                </BtnLinkIcon>
               </li>
               <li>
-                <BtnIcon
+                <BtnLinkIcon
                   color="emerald"
                   type="none"
                   ariaLabel="instagram site externo - abrirá uma nova janela"
-                  isLink={true}
                   href="https://www.instagram.com/lacrei.saude/"
                 >
                   <Instagram />
-                </BtnIcon>
+                </BtnLinkIcon>
               </li>
               <li>
-                <BtnIcon
+                <BtnLinkIcon
                   color="emerald"
                   type="none"
                   ariaLabel="linkedin site externo - abrirá uma nova janela"
-                  isLink={true}
                   href="https://linkedin.com/company/lacrei/"
                 >
                   <Linkedin />
-                </BtnIcon>
+                </BtnLinkIcon>
               </li>
               <li>
-                <BtnIcon
+                <BtnLinkIcon
                   color="emerald"
                   type="none"
                   ariaLabel="e-mail site externo - abrirá uma nova janela com seu e-mail como remetente e a lacrei saúde como destinatário"
-                  isLink={true}
+                  href="#"
                 >
                   <Mail />
-                </BtnIcon>
+                </BtnLinkIcon>
               </li>
             </ul>
             <Text variant="Text-base">CNPJ: 51.265.351/0001-65</Text>

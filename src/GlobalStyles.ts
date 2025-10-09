@@ -93,6 +93,13 @@ const GlobalStyles = createGlobalStyle`
       --border-width-md: 2px;
       --border-width-lg: 4px;
       --border-width-xl: 8px;
+
+      /** shadows */
+      --shadow-sm: 0px 1px 3px 0px rgb(0 0 0 / 10%);
+      --shadow-md: 0px 5px 10px 0px rgb(0 0 0 / 30%);
+      --shadow-lg: 0px 15px 25px 0px rgb(0 0 0 / 50%);
+      --inner-shadow: inset 2, 9, 20, 0, rgba(0,0,0,0.7); 
+      --drop-shadow: drop-shadow(0,4,4,0, 0.25);
     }
 
     html, body {

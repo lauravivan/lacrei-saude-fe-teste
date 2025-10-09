@@ -17,17 +17,8 @@ const Container = styled.div`
   display: flex;
   align-items: center;
 
-  .account {
-    display: flex;
-    align-items: center;
-  }
-
-  .avatar {
-    display: flex;
-    background-color: var(--emerald-20);
-    border-radius: var(--border-radius-circle);
-    size: 48px;
-    padding: var(--spacing-xs) var(--spacing-s);
+  > div:first-of-type {
+    margin-right: var(--spacing-2-xs);
   }
 `;
 

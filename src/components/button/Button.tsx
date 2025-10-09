@@ -4,12 +4,12 @@ import styled, { css } from "styled-components";
 export type BtnType = "solid" | "outline" | "none";
 export type BtnColor = "emerald";
 
-type ButtonType = {
+interface ButtonProps {
   children: ReactNode;
   type: BtnType;
   color: BtnColor;
   ariaLabel?: string;
-};
+}
 
 const button = css`
   button,
@@ -26,6 +26,7 @@ const button = css`
   padding: 0 var(--spacing-inline-xxm);
   border-radius: var(--border-radius-sm);
   cursor: pointer;
+  justify-content: center;
 
   svg {
     height: 32px;
@@ -72,7 +73,7 @@ export default function Button({
   type,
   color = "emerald",
   ariaLabel,
-}: ButtonType) {
+}: ButtonProps) {
   const solid = type === "solid" && (
     <SolidBtnContainer color={color} className="btn-container">
       <button aria-label={ariaLabel}>{children}</button>
@@ -100,30 +101,33 @@ export default function Button({
   return solid || outline || ghost;
 }
 
+interface ButtonLinkProps extends ButtonProps, BtnLink {}
+
 export function ButtonLink({
   children,
   type,
   color = "emerald",
   ariaLabel,
   href,
-}: ButtonType & { href?: string }) {
+  target,
+}: ButtonLinkProps) {
   const solid = type === "solid" && (
     <SolidBtnContainer color={color} className="btn-container">
-      <a aria-label={ariaLabel} href={href} target="_blank">
+      <a aria-label={ariaLabel} href={href} target={target}>
         {children}
       </a>
     </SolidBtnContainer>
   );
   const outline = type === "outline" && (
     <OutlineBtnContainer color={color} className="btn-container">
-      <a aria-label={ariaLabel} href={href} target="_blank">
+      <a aria-label={ariaLabel} href={href} target={target}>
         {children}
       </a>
     </OutlineBtnContainer>
   );
   const ghost = type === "none" && (
     <GhostBtnContainer color={color} className="btn-container">
-      <a aria-label={ariaLabel} href={href} target="_blank">
+      <a aria-label={ariaLabel} href={href} target={target}>
         {children}
       </a>
     </GhostBtnContainer>

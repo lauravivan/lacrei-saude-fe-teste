@@ -25,11 +25,10 @@ function getColor(type: Type) {
 
 const Badge = css`
   display: flex;
-  width: max-content;
 
   svg {
     width: 24px;
-    height: 24px;
+    height: fit-content;
     border-radius: var(--border-radius-sm);
   }
 `;
@@ -38,7 +37,7 @@ const BadgeDesktop = css`
   ${Badge}
   column-gap: var(--spacing-inline-xs);
   align-items: center;
-  height: "36px";
+  height: 36px;
   border-radius: var(--border-radius-sm);
   padding: var(--spacing-squish-s);
 `;
@@ -58,7 +57,7 @@ const SecondBadgeDesktop = styled.div<{ type: Type }>`
 
 const BadgeMobile = css`
   ${BadgeDesktop}
-  column-gap: var(--spacing-inline-xs);
+  gap: var(--spacing-squish-xxs);
   align-items: center;
   border-radius: var(--border-radius-xs);
   padding: var(--spacing-squish-xs);

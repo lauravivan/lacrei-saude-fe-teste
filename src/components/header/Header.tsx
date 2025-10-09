@@ -14,11 +14,6 @@ const Header = styled.header<{ isDesktop: boolean }>`
       ? "var(--spacing-m) var(--spacing-layout-xl)"
       : "var(--spacing-m)"};
   justify-content: space-between;
-
-  .img-wrapper {
-    width: 134px;
-    height: 16px;
-  }
 `;
 
 export default function HeaderComponent({ children }: { children: ReactNode }) {
@@ -38,8 +33,8 @@ export default function HeaderComponent({ children }: { children: ReactNode }) {
           <Image
             src={LogoHeader}
             alt="Logo Lacrei Saúde"
-            width={134}
-            height={16}
+            width={150}
+            height={60}
           />
         )}
       </div>

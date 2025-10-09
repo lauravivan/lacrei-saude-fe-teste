@@ -3,14 +3,13 @@ import {
   BadgeGenderIdentity,
   BadgeSexuality,
 } from "@/components/badge/BadgeDiversity";
-import Title from "@/components/Title";
 import { Professional as ProfessionalType } from "@/types/professional";
 import styled from "styled-components";
 import Text from "@/components/Text";
-import BtnText from "@/components/button/BtnText";
 import { BadgeService } from "@/components/badge/BadgeService";
 import { useScreenSize } from "@/hooks/useScreenSize";
 import Image from "next/image";
+import BtnLinkText from "@/components/button/BtnLinkText";
 
 type ProfessionalsType = {
   professional: ProfessionalType;
@@ -21,6 +20,9 @@ const ProfessionalCard = styled.article<{ isDesktop: boolean }>`
   margin: var(--spacing-inset-m) var(--spacing-inset-xm);
   column-gap: var(--spacing-inset-m);
   flex-direction: ${({ isDesktop }) => (isDesktop ? "row" : "column")};
+  box-shadow: var(--shadow-sm);
+  padding: var(--spacing-s);
+  border-radius: var(--border-radius-sm);
 
   .professional {
     &__info {
@@ -38,7 +40,7 @@ const ProfessionalCard = styled.article<{ isDesktop: boolean }>`
       }
 
       &__picture {
-        width: 100px;
+        width: 60px;
         height: auto;
 
         img {
@@ -102,8 +104,10 @@ export default function Professional({ professional }: ProfessionalsType) {
             />
           </div>
           <div>
-            <Title number={5}>{professional.name}</Title>
-            <Text variant="Text-sm-high200">
+            <Text variant="Text-xl-high200" color="emerald-60">
+              {professional.name}
+            </Text>
+            <Text variant="Text-xs-high200">
               {`${professional.specialty}, ${professional.crm}`}
             </Text>
           </div>
@@ -121,17 +125,24 @@ export default function Professional({ professional }: ProfessionalsType) {
                 <BadgeService key={po} text={po} />
               ))}
             </div>
-            <details>
-              <summary>Informações</summary>
-              <Text variant="Text-base">{professional.bio}</Text>
-            </details>
+            {isDesktop && (
+              <details>
+                <summary>Informações</summary>
+                <Text variant="Text-base">{professional.bio}</Text>
+              </details>
+            )}
           </div>
         </div>
       </div>
       <div className="professional__services">
-        <BtnText type={isDesktop ? "solid" : "outline"} color="emerald">
+        <BtnLinkText
+          href={`/profissionais/${professional.id}`}
+          type={isDesktop ? "solid" : "outline"}
+          color="emerald"
+          target="_self"
+        >
           Atendimentos
-        </BtnText>
+        </BtnLinkText>
       </div>
     </ProfessionalCard>
   );
