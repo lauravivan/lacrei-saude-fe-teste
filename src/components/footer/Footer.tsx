@@ -1,15 +1,15 @@
 import styled from "styled-components";
 import Text from "@/components/Text";
-import LinkText from "./link/LinkText";
-import DividerComponent from "./Divider";
-import BtnIcon from "./button/BtnIcon";
 import { useScreenSize } from "@/hooks/useScreenSize";
 import LogoFooter from "@/assets/img/logo/logo-footer-desktop.svg";
 import Image from "next/image";
-import Facebook from "./icons/social-media/Facebook";
-import Instagram from "./icons/social-media/Instagram";
-import Linkedin from "./icons/social-media/Linkedin";
-import Mail from "./icons/Mail";
+import Divider from "@/components/Divider";
+import BtnIcon from "@/components/button/BtnIcon";
+import Facebook from "@/components/icons/social-media/Facebook";
+import Mail from "@/components/icons/Mail";
+import Linkedin from "@/components/icons/social-media/Linkedin";
+import Instagram from "@/components/icons/social-media/Instagram";
+import LinkText from "@/components/link/LinkText";
 
 const Footer = styled.footer<{ isDesktop: boolean }>`
   display: flex;
@@ -64,7 +64,7 @@ export default function FooterComponent() {
 
   return (
     <Footer className="footer" isDesktop={isDesktop}>
-      <DividerComponent margin="0 var(--spacing-m)"></DividerComponent>
+      <Divider margin="0 var(--spacing-m)"></Divider>
       <div className="footer__content">
         {isDesktop && (
           <Image

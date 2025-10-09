@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import App from "./App";
+import App from "./(user)/App";
 import StyledComponentsRegistry from "@/lib/registry";
 import { Nunito } from "next/font/google";
 

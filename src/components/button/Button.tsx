@@ -16,6 +16,8 @@ const button = css`
   a {
     all: unset;
     cursor: pointer;
+    display: flex;
+    align-items: center;
   }
 
   display: flex;
@@ -27,6 +29,7 @@ const button = css`
 
   svg {
     height: 32px;
+    width: 25px;
   }
 `;
 
@@ -57,6 +60,7 @@ const GhostBtnContainer = styled.div<{ color: string }>`
   text-align: center;
   padding: var(--spacing-inset-sm);
   display: block;
+  height: fit-content;
 
   svg {
     fill: ${({ color }) => `var(--${color}-60)`};

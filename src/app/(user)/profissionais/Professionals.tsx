@@ -8,6 +8,7 @@ import styled from "styled-components";
 import Title from "@/components/Title";
 import { useScreenSize } from "@/hooks/useScreenSize";
 import Text from "@/components/Text";
+import HeaderSignOut from "@/components/header/HeaderSignOut";
 
 const ProfessionalsMain = styled.main`
   width: 90%;
@@ -42,27 +43,30 @@ export default function Professionals() {
   });
 
   return (
-    <ProfessionalsMain className="professionals">
-      <Title number={isDesktop ? 2 : 3}>Profissionais disponíveis</Title>
-      {professionals && (
-        <Text variant="Text-base">
-          {`${professionals.length} pessoas profissionais encontradas`}
-        </Text>
-      )}
-      <div className="professionals__professionals">
-        {professionals && professionals.length > 0 ? (
-          professionals.map((professional: ProfessionalType) => (
-            <Professional
-              key={professional.id}
-              professional={professional}
-            ></Professional>
-          ))
-        ) : (
+    <>
+      <HeaderSignOut showSignOut={true} showPopover={true} showSearch={true} />
+      <ProfessionalsMain className="professionals">
+        <Title number={isDesktop ? 2 : 3}>Profissionais disponíveis</Title>
+        {professionals && (
           <Text variant="Text-base">
-            Não foram encontradas pessoas profissionais
+            {`${professionals.length} pessoas profissionais encontradas`}
           </Text>
         )}
-      </div>
-    </ProfessionalsMain>
+        <div className="professionals__professionals">
+          {professionals && professionals.length > 0 ? (
+            professionals.map((professional: ProfessionalType) => (
+              <Professional
+                key={professional.id}
+                professional={professional}
+              ></Professional>
+            ))
+          ) : (
+            <Text variant="Text-base">
+              Não foram encontradas pessoas profissionais
+            </Text>
+          )}
+        </div>
+      </ProfessionalsMain>
+    </>
   );
 }
