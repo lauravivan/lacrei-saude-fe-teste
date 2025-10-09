@@ -23,7 +23,6 @@ const Container = styled.div`
 `;
 
 export default function HeaderSignOut({
-  showSearch = false,
   showPopover = false,
   showSignOut = false,
 }: HeaderSignOutProps) {

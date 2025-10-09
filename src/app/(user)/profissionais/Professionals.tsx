@@ -5,7 +5,6 @@ import { useQuery } from "@tanstack/react-query";
 import { getProfessionals } from "./_routes/getProfessionals";
 import { Professional as ProfessionalType } from "@/types/professional";
 import styled from "styled-components";
-import { useScreenSize } from "@/hooks/useScreenSize";
 import Text from "@/components/Text";
 import HeaderSignOut from "@/components/header/HeaderSignOut";
 import Footer from "@/components/footer/Footer";
@@ -30,8 +29,6 @@ const ProfessionalsMain = styled.main`
 `;
 
 export default function Professionals() {
-  const { isDesktop } = useScreenSize();
-
   const { data: professionals } = useQuery({
     queryKey: ["professionals"],
     refetchOnWindowFocus: false,

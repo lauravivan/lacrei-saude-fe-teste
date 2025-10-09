@@ -6,8 +6,6 @@ import Image from "next/image";
 import Title from "./Title";
 import { useScreenSize } from "@/hooks/useScreenSize";
 
-type PopoverProps = {};
-
 const Account = styled.div<{ isDesktop: boolean }>`
   display: flex;
   align-items: center;
@@ -56,7 +54,7 @@ function PopoverSignOut({
   );
 }
 
-export default function Popover({}: PopoverProps) {
+export default function Popover() {
   const { session } = useSession();
   const { isDesktop } = useScreenSize();
 
