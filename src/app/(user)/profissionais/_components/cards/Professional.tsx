@@ -10,6 +10,7 @@ import { BadgeService } from "@/components/badge/BadgeService";
 import { useScreenSize } from "@/hooks/useScreenSize";
 import Image from "next/image";
 import BtnLinkText from "@/components/button/BtnLinkText";
+import Title from "@/components/Title";
 
 type ProfessionalsType = {
   professional: ProfessionalType;
@@ -104,9 +105,13 @@ export default function Professional({ professional }: ProfessionalsType) {
             />
           </div>
           <div>
-            <Text variant="Text-xl-high200" color="emerald-60">
-              {professional.name}
-            </Text>
+            {isDesktop ? (
+              <Title number={5}>{professional.name}</Title>
+            ) : (
+              <Text variant="Text-xl-high200" color="emerald-60">
+                {professional.name}
+              </Text>
+            )}
             <Text variant="Text-xs-high200">
               {`${professional.specialty}, ${professional.crm}`}
             </Text>

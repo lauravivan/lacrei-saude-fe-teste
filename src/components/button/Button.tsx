@@ -41,6 +41,7 @@ const SolidBtnContainer = styled.div<{ color: string }>`
   ${button}
   background-color: ${({ color }) => `var(--${color}-60)`};
   border-width: var(--border-width-none);
+  box-shadow: var(--shadow-md);
 
   svg {
     fill: ${({ color }) => `var(--${color}-60)`};
@@ -53,6 +54,7 @@ const OutlineBtnContainer = styled.div<{ color: string }>`
   border-color: ${({ color }) => `var(--${color}-60)`};
   border-width: var(--border-width-md);
   border-style: solid;
+  box-shadow: var(--shadow-md);
 
   svg {
     fill: ${({ color }) => `var(--${color}-60)`};
