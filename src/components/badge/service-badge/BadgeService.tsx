@@ -1,8 +1,11 @@
-// import BadgeBase from "./Badge";
+import PrimaryBadge from "../primary-badge/PrimaryBadge";
 
-export function BadgeService({ text }: { text: "Convênio" | "Particular" }) {
+const BadgeService = ({ text }: { text: "Convênio" | "Particular" }) => {
   return (
-    // <BadgeBase type="success" style="solid" contentType="text" text={text} />
-    <div></div>
+    <PrimaryBadge type="success" style="solid">
+      {text}
+    </PrimaryBadge>
   );
-}
+};
+
+export default BadgeService;
