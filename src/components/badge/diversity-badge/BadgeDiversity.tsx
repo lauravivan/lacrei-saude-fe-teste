@@ -1,4 +1,4 @@
-import PrimaryBadge from "../primary-badge/PrimaryBadge";
+import PrimaryBadge from "../PrimaryBadge";
 
 const BadgeDiversity = ({
   children,
@@ -8,7 +8,7 @@ const BadgeDiversity = ({
   img: React.ReactElement<HTMLImageElement>;
 }) => {
   return (
-    <PrimaryBadge type="default" style="solid" img={img}>
+    <PrimaryBadge variant="Primary Badge/Default" img={img}>
       {children}
     </PrimaryBadge>
   );

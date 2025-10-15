@@ -1,11 +1,7 @@
-import PrimaryBadge from "../primary-badge/PrimaryBadge";
+import PrimaryBadge from "../PrimaryBadge";
 
 const BadgeService = ({ text }: { text: "Convênio" | "Particular" }) => {
-  return (
-    <PrimaryBadge type="success" style="solid">
-      {text}
-    </PrimaryBadge>
-  );
+  return <PrimaryBadge variant="Primary Badge/Success">{text}</PrimaryBadge>;
 };
 
 export default BadgeService;
