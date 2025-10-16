@@ -1,3 +1,5 @@
+"use client";
+
 import dynamic from "next/dynamic";
 import styled from "styled-components";
 import { useScreenSize } from "@/hooks/useScreenSize";
@@ -16,9 +18,7 @@ const Header = styled.header<{ isDesktop: boolean }>`
   ${({ isDesktop }) => base(isDesktop)}
 `;
 
-interface HeaderProps extends React.HTMLAttributes<HTMLElement> {}
-
-const HeaderComponent = ({ children }: HeaderProps) => {
+const HeaderComponent = ({ children }: React.HTMLAttributes<HTMLElement>) => {
   const { isDesktop } = useScreenSize();
 
   return (

@@ -1,8 +1,8 @@
 import SkipLinkStyles from "./SkipLink.styles";
 
-interface SkipLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {}
-
-const SkipLink = ({ children }: SkipLinkProps) => {
+const SkipLink = ({
+  children,
+}: React.AnchorHTMLAttributes<HTMLAnchorElement>) => {
   return <SkipLinkStyles>{children}</SkipLinkStyles>;
 };
 

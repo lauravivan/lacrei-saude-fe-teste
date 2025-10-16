@@ -1,3 +1,5 @@
+"use client";
+
 import dynamic from "next/dynamic";
 import { BadgeGenderIdentityType } from "./BadgeDiversity.types";
 import BadgeDiversity from "./BadgeDiversity";
