@@ -24,7 +24,7 @@ const HeaderComponent = ({ children }: React.HTMLAttributes<HTMLElement>) => {
   return (
     <Header isDesktop={isDesktop}>
       <div className="img-wrapper">
-        {isDesktop ? <LogoHeaderDesktop /> : <LogoHeader />}
+        <a href="/">{isDesktop ? <LogoHeaderDesktop /> : <LogoHeader />}</a>
       </div>
       {children}
     </Header>

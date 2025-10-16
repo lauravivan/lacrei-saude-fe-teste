@@ -8,6 +8,7 @@ import BadgeService from "@/components/badge/service-badge/BadgeService";
 import Button from "@/components/button/Button";
 import {
   Card,
+  Link,
   ProfessionalBio,
   ProfessionalIdentity,
   ProfessionalInfoContainer,
@@ -26,45 +27,47 @@ export default function Professional({ professional }: ProfessionalsProps) {
 
   return (
     <Card isDesktop={isDesktop}>
-      <ProfessionalInfoContainer isDesktop={isDesktop}>
-        <div>
-          <ProfessionalPictureContainer>
-            <Image
-              width={100}
-              height={100}
-              src={`/professionals/${professional.picture}.webp`}
-              alt={`Foto da pessoa ${professional.name}`}
-            />
-          </ProfessionalPictureContainer>
+      <Link href={`/profissionais/${professional.id}`}>
+        <ProfessionalInfoContainer isDesktop={isDesktop}>
           <div>
-            <ProfessionalName isDesktop={isDesktop}>
-              {professional.name}
-            </ProfessionalName>
-            <p>{`${professional.specialty}, ${professional.crm}`}</p>
+            <ProfessionalPictureContainer>
+              <Image
+                width={100}
+                height={100}
+                src={`/professionals/${professional.picture}.webp`}
+                alt={`Foto da pessoa ${professional.name}`}
+              />
+            </ProfessionalPictureContainer>
+            <div>
+              <ProfessionalName isDesktop={isDesktop}>
+                {professional.name}
+              </ProfessionalName>
+              <p>{`${professional.specialty}, ${professional.crm}`}</p>
+            </div>
           </div>
-        </div>
-        <div>
-          <div></div>
           <div>
-            <ProfessionalIdentity>
-              <BadgeEthnicity label={professional.identity.race} />
-              <BadgeGenderIdentity label={professional.identity.gender} />
-              <BadgeSexuality label={professional.identity.sexuality} />
-            </ProfessionalIdentity>
-            <ProfessionalPayment>
-              {professional.payment_options.map((po) => (
-                <BadgeService key={po}>{po}</BadgeService>
-              ))}
-            </ProfessionalPayment>
-            {isDesktop && (
-              <details>
-                <summary>Informações</summary>
-                <ProfessionalBio>{professional.bio}</ProfessionalBio>
-              </details>
-            )}
+            <div></div>
+            <div>
+              <ProfessionalIdentity>
+                <BadgeEthnicity label={professional.identity.race} />
+                <BadgeGenderIdentity label={professional.identity.gender} />
+                <BadgeSexuality label={professional.identity.sexuality} />
+              </ProfessionalIdentity>
+              <ProfessionalPayment>
+                {professional.payment_options.map((po) => (
+                  <BadgeService key={po}>{po}</BadgeService>
+                ))}
+              </ProfessionalPayment>
+              {isDesktop && (
+                <details>
+                  <summary>Informações</summary>
+                  <ProfessionalBio>{professional.bio}</ProfessionalBio>
+                </details>
+              )}
+            </div>
           </div>
-        </div>
-      </ProfessionalInfoContainer>
+        </ProfessionalInfoContainer>
+      </Link>
       <ProfessionalServices isDesktop={isDesktop}>
         <Button variant="Primary Button">Atendimentos</Button>
       </ProfessionalServices>

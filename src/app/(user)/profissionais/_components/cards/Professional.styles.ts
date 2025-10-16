@@ -5,6 +5,11 @@ import effects from "@/styles/tokens/effects";
 import spacing from "@/styles/tokens/spacing";
 import styled from "styled-components";
 
+export const Link = styled.a`
+  all: unset;
+  flex: 1;
+`;
+
 export const Card = styled.article<{ isDesktop: boolean }>`
   display: flex;
   margin: ${spacing["spacing-inline-m"]} ${spacing["spacing-inset-xm"]};
@@ -13,6 +18,11 @@ export const Card = styled.article<{ isDesktop: boolean }>`
   box-shadow: ${effects["shadow-sm"]};
   padding: ${spacing["spacing-s"]};
   border-radius: ${effects["border-radius-sm"]};
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: ${effects["shadow-md"]};
+  }
 `;
 
 export const ProfessionalName = styled.p<{ isDesktop: boolean }>`

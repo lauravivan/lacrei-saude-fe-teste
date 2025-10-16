@@ -2,6 +2,7 @@ import text from "@/styles/mixins/text";
 import spacing from "@/styles/tokens/spacing";
 import styled from "styled-components";
 
+
 export const ProfessionalsContainer = styled.main`
   margin: 0 auto;
 

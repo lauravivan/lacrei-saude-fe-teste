@@ -18,7 +18,7 @@ const Professionals = () => {
     queryKey: ["professionals"],
     refetchOnWindowFocus: false,
     queryFn: async () => {
-      const res = getProfessionals();
+      const res = await getProfessionals();
       return res;
     },
   });

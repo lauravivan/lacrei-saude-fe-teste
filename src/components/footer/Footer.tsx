@@ -17,12 +17,14 @@ const Footer = () => {
       <Divider margin="0 var(--spacing-m)"></Divider>
       <div className="footer__content">
         {isDesktop && (
-          <Image
-            src={LogoFooter}
-            alt="Logo Lacrei Saúde"
-            width={170}
-            height={48}
-          />
+          <a href="/">
+            <Image
+              src={LogoFooter}
+              alt="Logo Lacrei Saúde"
+              width={170}
+              height={48}
+            />
+          </a>
         )}
         <div>
           <ul className="footer__menu">
@@ -96,6 +98,6 @@ const Footer = () => {
       </div>
     </FooterStyles>
   );
-}
+};
 
 export default Footer;
