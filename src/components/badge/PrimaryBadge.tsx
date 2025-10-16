@@ -1,7 +1,6 @@
 import { useScreenSize } from "@/hooks/useScreenSize";
 import primaryBadge from "@/styles/mixins/badge/primary-badge/primary-badge";
 import styled from "styled-components";
-import { BadgeType } from "./Badge.types";
 
 const Badge = styled.div<{
   variant: keyof typeof primaryBadge;
@@ -10,7 +9,9 @@ const Badge = styled.div<{
   ${({ variant, isDesktop }) => primaryBadge[variant](isDesktop)}
 `;
 
-interface PrimaryBadgeProps extends BadgeType {
+interface PrimaryBadgeProps extends React.HTMLAttributes<HTMLDivElement> {
+  children: string;
+  img?: React.ReactElement<HTMLImageElement> | null;
   variant: keyof typeof primaryBadge;
 }
 

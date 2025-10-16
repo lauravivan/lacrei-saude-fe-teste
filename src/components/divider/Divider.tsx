@@ -1,12 +1,14 @@
+import colors from "@/styles/tokens/colors";
+import spacing from "@/styles/tokens/spacing";
 import styled from "styled-components";
 
 const Divider = styled.div<{ margin: string }>`
-  color: var(--gray-30);
-  background-color: var(--gray-30);
+  color: ${colors["gray-30"]};
+  background-color: ${colors["gray-30"]};
   max-width: 100%;
   height: 1px;
   margin: ${({ margin }) => margin};
-  margin-top: var(--spacing-layout-l);
+  margin-top: ${spacing["spacing-layout-l"]};
 `;
 
 export default function DividerComponent({ margin }: { margin: string }) {

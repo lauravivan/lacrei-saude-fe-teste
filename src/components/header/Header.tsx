@@ -1,44 +1,34 @@
-import Image from "next/image";
+import dynamic from "next/dynamic";
 import styled from "styled-components";
-import LogoHeader from "@/assets/img/logo/logo-header-mobile.svg";
-import LogoHeaderDesktop from "@/assets/img/logo/logo-header-desktop.svg";
 import { useScreenSize } from "@/hooks/useScreenSize";
-import { ReactNode } from "react";
+import React, { ReactNode } from "react";
+import base from "@/styles/mixins/header/base";
+
+const LogoHeader = dynamic(() => import("./LogoHeader"), {
+  ssr: false,
+});
+
+const LogoHeaderDesktop = dynamic(() => import("./LogoHeaderDesktop"), {
+  ssr: false,
+});
 
 const Header = styled.header<{ isDesktop: boolean }>`
-  background-image: var(--gradient-subtle);
-  display: flex;
-  align-items: center;
-  padding: ${({ isDesktop }) =>
-    isDesktop
-      ? "var(--spacing-m) var(--spacing-layout-xl)"
-      : "var(--spacing-m)"};
-  justify-content: space-between;
+  ${({ isDesktop }) => base(isDesktop)}
 `;
 
-export default function HeaderComponent({ children }: { children: ReactNode }) {
+interface HeaderProps extends React.HTMLAttributes<HTMLElement> {}
+
+const HeaderComponent = ({ children }: HeaderProps) => {
   const { isDesktop } = useScreenSize();
 
   return (
     <Header isDesktop={isDesktop}>
       <div className="img-wrapper">
-        {isDesktop ? (
-          <Image
-            src={LogoHeaderDesktop}
-            alt="Logo Lacrei Saúde"
-            width={187}
-            height={24}
-          />
-        ) : (
-          <Image
-            src={LogoHeader}
-            alt="Logo Lacrei Saúde"
-            width={150}
-            height={60}
-          />
-        )}
+        {isDesktop ? <LogoHeaderDesktop /> : <LogoHeader />}
       </div>
       {children}
     </Header>
   );
-}
+};
+
+export default HeaderComponent;

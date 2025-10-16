@@ -1,9 +1,9 @@
 import useSession from "@/hooks/useSession";
-import BtnIcon from "./button/BtnIcon";
-import ExpandMore from "./icons/arrows/ExpandMore";
+// import BtnIcon from "./button/BtnIcon";
+// import ExpandMore from "./icons/arrows/ExpandMore";
 import styled from "styled-components";
 import Image from "next/image";
-import Title from "./Title";
+// import Title from "./title/Title";
 import { useScreenSize } from "@/hooks/useScreenSize";
 
 const Account = styled.div<{ isDesktop: boolean }>`
@@ -44,12 +44,12 @@ function PopoverSignOut({
         <Image src={photo} width={60} height={60} alt="Foto de perfil" />
       ) : (
         <div className="avatar">
-          <Title number={isDesktop ? 3 : 5}>{username?.charAt(0)}</Title>
+          {/* <Title number={isDesktop ? 3 : 5}>{username?.charAt(0)}</Title> */}
         </div>
       )}
-      <BtnIcon color="emerald" type="none" ariaLabel="Expandir">
+      {/* <BtnIcon color="emerald" type="none" ariaLabel="Expandir">
         <ExpandMore />
-      </BtnIcon>
+      </BtnIcon> */}
     </Account>
   );
 }

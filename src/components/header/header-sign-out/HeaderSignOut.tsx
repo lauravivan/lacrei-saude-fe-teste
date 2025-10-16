@@ -1,16 +1,11 @@
-import Header from "./Header";
-import BtnIcon from "../button/BtnIcon";
-import Popover from "../Popover";
-import Help from "../icons/Help";
+import Header from "../Header";
+import Help from "../../icons/Help";
 import { useScreenSize } from "@/hooks/useScreenSize";
-import BtnText from "../button/BtnText";
 import styled from "styled-components";
-
-export type HeaderSignOutProps = {
-  showSearch?: boolean;
-  showPopover?: boolean;
-  showSignOut?: boolean;
-};
+import Popover from "../../popover/Popover";
+import Button from "@/components/button/Button";
+import ButtonIcon from "@/components/button/ButtonIcon";
+import spacing from "@/styles/tokens/spacing";
 
 const Container = styled.div`
   margin-left: auto;
@@ -18,9 +13,15 @@ const Container = styled.div`
   align-items: center;
 
   > div:first-of-type {
-    margin-right: var(--spacing-2-xs);
+    margin-right: ${spacing["spacing-2-xs"]};
   }
 `;
+
+interface HeaderSignOutProps {
+  showSearch?: boolean;
+  showPopover?: boolean;
+  showSignOut?: boolean;
+}
 
 export default function HeaderSignOut({
   showPopover = false,
@@ -32,13 +33,11 @@ export default function HeaderSignOut({
     <Header>
       <Container>
         {isDesktop ? (
-          <BtnText type="outline" color="emerald">
-            Ajuda
-          </BtnText>
+          <Button variant="Secondary Button">Ajuda</Button>
         ) : (
-          <BtnIcon color="emerald" type="none" ariaLabel="Botão de ajuda">
+          <ButtonIcon variant="Ghost Button Icon">
             <Help />
-          </BtnIcon>
+          </ButtonIcon>
         )}
         {showPopover && <Popover />}
         {showSignOut && <div></div>}
