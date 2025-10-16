@@ -5,9 +5,10 @@ import { useQuery } from "@tanstack/react-query";
 import { getProfessionals } from "./_routes/getProfessionals";
 import { Professional as ProfessionalType } from "@/types/professional";
 import styled from "styled-components";
-import Text from "@/components/Text";
-import HeaderSignOut from "@/components/header/HeaderSignOut";
+import HeaderSignOut from "@/components/header/header-sign-out/HeaderSignOut";
 import Footer from "@/components/footer/Footer";
+import spacing from "@/styles/tokens/spacing";
+import SkipLink from "@/components/skip-link/SkipLink";
 
 const ProfessionalsMain = styled.main`
   margin: 0 auto;
@@ -15,7 +16,7 @@ const ProfessionalsMain = styled.main`
   h2,
   h3,
   > p {
-    margin: var(--spacing-inset-m) var(--spacing-inset-xm);
+    margin: ${spacing["spacing-inset-m"]} ${spacing["spacing-inset-xm"]};
   }
 
   .professionals {
@@ -23,7 +24,7 @@ const ProfessionalsMain = styled.main`
       width: 100%;
       display: flex;
       flex-direction: column;
-      row-gap: var(--spacing-inset-xxs);
+      row-gap: ${spacing["spacing-inset-xxs"]};
     }
   }
 `;
@@ -40,16 +41,14 @@ export default function Professionals() {
 
   return (
     <>
-      <a href="#main-content" className="skiplink">
-        Ir para o conteúdo principal
-      </a>
+      <SkipLink href="#main-content">Ir para o conteúdo principal</SkipLink>
       <HeaderSignOut showSignOut={true} showPopover={true} showSearch={true} />
-      <ProfessionalsMain className="professionals" id="main-content">
-        {professionals && (
+      <ProfessionalsMain id="main-content">
+        {/* {professionals && (
           <Text variant="Text-base">
             {`Encontramos ${professionals.length} resultados`}
           </Text>
-        )}
+        )} */}
         <div className="professionals__professionals">
           {professionals && professionals.length > 0 ? (
             professionals.map((professional: ProfessionalType) => (
@@ -59,9 +58,10 @@ export default function Professionals() {
               ></Professional>
             ))
           ) : (
-            <Text variant="Text-base">
-              Não foram encontradas pessoas profissionais
-            </Text>
+            // <Text variant="Text-base">
+            //   Não foram encontradas pessoas profissionais
+            // </Text>
+            <div></div>
           )}
         </div>
       </ProfessionalsMain>

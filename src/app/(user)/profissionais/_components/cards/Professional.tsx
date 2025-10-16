@@ -1,16 +1,17 @@
-import {
-  BadgeEthnicity,
-  BadgeGenderIdentity,
-  BadgeSexuality,
-} from "@/components/badge/BadgeDiversity";
 import { Professional as ProfessionalType } from "@/types/professional";
 import styled from "styled-components";
-import Text from "@/components/Text";
-import { BadgeService } from "@/components/badge/BadgeService";
 import { useScreenSize } from "@/hooks/useScreenSize";
 import Image from "next/image";
-import BtnLinkText from "@/components/button/BtnLinkText";
-import Title from "@/components/Title";
+import BadgeGenderIdentity from "@/components/badge/diversity-badge/BadgeGenderIdentity";
+import BadgeEthnicity from "@/components/badge/diversity-badge/BadgeEthnicity";
+import BadgeSexuality from "@/components/badge/diversity-badge/BadgeSexuality";
+import spacing from "@/styles/tokens/spacing";
+import effects from "@/styles/tokens/effects";
+import headline from "@/styles/mixins/headline/headline";
+import text from "@/styles/mixins/text";
+import colors from "@/styles/tokens/colors";
+import BadgeService from "@/components/badge/service-badge/BadgeService";
+import Button from "@/components/button/Button";
 
 type ProfessionalsType = {
   professional: ProfessionalType;
@@ -18,25 +19,37 @@ type ProfessionalsType = {
 
 const ProfessionalCard = styled.article<{ isDesktop: boolean }>`
   display: flex;
-  margin: var(--spacing-inset-m) var(--spacing-inset-xm);
-  column-gap: var(--spacing-inset-m);
+  margin: ${spacing["spacing-inline-m"]} ${spacing["spacing-inset-xm"]};
+  column-gap: ${spacing["spacing-inset-m"]};
   flex-direction: ${({ isDesktop }) => (isDesktop ? "row" : "column")};
-  box-shadow: var(--shadow-sm);
-  padding: var(--spacing-s);
-  border-radius: var(--border-radius-sm);
+  box-shadow: ${effects["shadow-sm"]};
+  padding: ${spacing["spacing-s"]};
+  border-radius: ${effects["border-radius-sm"]};
 
   .professional {
+    &__name {
+      ${({ isDesktop }) =>
+        isDesktop
+          ? headline["Headline-sm-high200"]("left")
+          : text["Text-xl-high200"]};
+      color: ${({ isDesktop }) => !isDesktop && colors["emerald-60"]};
+    }
+
+    &__name + p {
+      ${text["Text-xs-high200"]}
+    }
+
     &__info {
       > div:first-of-type {
         display: flex;
-        column-gap: var(--spacing-inset-m);
+        column-gap: ${spacing["spacing-inset-m"]};
 
         > div:first-of-type {
           display: flex;
         }
 
         h5 {
-          margin-bottom: var(--spacing-2-xs);
+          margin-bottom: ${spacing["spacing-2-xs"]};
         }
       }
 
@@ -62,18 +75,18 @@ const ProfessionalCard = styled.article<{ isDesktop: boolean }>`
     }
 
     &__identity {
-      margin-top: var(--spacing-s);
+      margin-top: ${spacing["spacing-s"]};
       display: flex;
-      gap: var(--spacing-inline-xs);
+      gap: ${spacing["spacing-inline-xs"]};
       flex-wrap: wrap;
       align-items: center;
-      margin-bottom: var(--spacing-inline-xs);
+      margin-bottom: ${spacing["spacing-inline-xs"]};
     }
 
     &__payment {
       display: flex;
-      gap: var(--spacing-inline-xs);
-      margin-bottom: var(--spacing-inline-m);
+      gap: ${spacing["spacing-inline-xs"]};
+      margin-bottom: ${spacing["spacing-inline-m"]};
     }
 
     &__services {
@@ -93,7 +106,7 @@ export default function Professional({ professional }: ProfessionalsType) {
   const { isDesktop } = useScreenSize();
 
   return (
-    <ProfessionalCard className="professional" isDesktop={isDesktop}>
+    <ProfessionalCard isDesktop={isDesktop}>
       <div className="professional__info">
         <div>
           <div className="professional__info__picture">
@@ -105,16 +118,8 @@ export default function Professional({ professional }: ProfessionalsType) {
             />
           </div>
           <div>
-            {isDesktop ? (
-              <Title number={5}>{professional.name}</Title>
-            ) : (
-              <Text variant="Text-xl-high200" color="emerald-60">
-                {professional.name}
-              </Text>
-            )}
-            <Text variant="Text-xs-high200">
-              {`${professional.specialty}, ${professional.crm}`}
-            </Text>
+            <p className="professional__name">{professional.name}</p>
+            <p>{`${professional.specialty}, ${professional.crm}`}</p>
           </div>
         </div>
         <div>
@@ -127,27 +132,20 @@ export default function Professional({ professional }: ProfessionalsType) {
             </div>
             <div className="professional__payment">
               {professional.payment_options.map((po) => (
-                <BadgeService key={po} text={po} />
+                <BadgeService key={po}>{po}</BadgeService>
               ))}
             </div>
             {isDesktop && (
               <details>
                 <summary>Informações</summary>
-                <Text variant="Text-base">{professional.bio}</Text>
+                {/* <Text variant="Text-base">{professional.bio}</Text> */}
               </details>
             )}
           </div>
         </div>
       </div>
       <div className="professional__services">
-        <BtnLinkText
-          href={`/profissionais/${professional.id}`}
-          type={isDesktop ? "solid" : "outline"}
-          color="emerald"
-          target="_self"
-        >
-          Atendimentos
-        </BtnLinkText>
+        <Button variant="Primary Button">Atendimentos</Button>
       </div>
     </ProfessionalCard>
   );
