@@ -22,3 +22,5 @@ const effects = {
   "inner-shadow": "inset 2px 9px 20px 0px rgba(0, 0, 0, 0.7)",
   "drop-shadow": "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))",
 };
+
+export default effects;

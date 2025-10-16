@@ -1,6 +1,6 @@
 const colors = {
   // emerald
-  "emerald-10": "#2D2D2D",
+  "emerald-10": "#DFF2ED",
   "emerald-20": "#B2DFD0",
   "emerald-30": "#80CAB1",
   "emerald-40": "#4FB494",
@@ -24,14 +24,19 @@ const colors = {
 
   // blue
   "blue-10": "#EBF2F9",
+  "blue-50": "#4D8ACB",
+  "blue-60": "#28588A",
 
   // gray
   "gray-10": "#ffffff",
   "gray-20": "#F0F0F0",
   "gray-30": "#CFCFCF",
+  "gray-60": "#515151",
+  "gray-70": "#2D2D2D",
+  "gray-80": "#131313",
 
   // gradient
-  "gradient-subtle": "linear-gradient(#f5fffb, var(--gray-10))",
+  "gradient-subtle": "linear-gradient(#f5fffb, #ffffff)",
 };
 
 export default colors;

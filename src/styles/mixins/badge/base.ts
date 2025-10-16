@@ -1,25 +1,27 @@
 import { css } from "styled-components";
 import text from "../text";
+import spacing from "@/styles/tokens/spacing";
+import effects from "@/styles/tokens/effects";
 
 const base = (isDesktop: boolean) => css`
   display: flex;
   column-gap: ${isDesktop
-    ? "var(--spacing-inline-xs)"
-    : "var(--spacing-squish-xxs)"};
+    ? spacing["spacing-inline-xs"]
+    : spacing["spacing-squish-xxs"]};
   align-items: center;
   height: 36px;
   border-radius: ${isDesktop
-    ? "var(--border-radius-sm)"
-    : "var(--border-radius-xs)"};
+    ? effects["border-radius-sm"]
+    : effects["border-radius-xs"]};
   padding: ${isDesktop
-    ? "var(--spacing-squish-s)"
-    : "var(--spacing-squish-xs)"};
+    ? spacing["spacing-squish-s"]
+    : spacing["spacing-squish-xs"]};
   ${isDesktop ? text["Text-sm"] : text["Text-xs"]}
 
   svg {
     width: 24px;
     height: fit-content;
-    border-radius: var(--border-radius-sm);
+    border-radius: ${effects["border-radius-sm"]};
   }
 `;
 

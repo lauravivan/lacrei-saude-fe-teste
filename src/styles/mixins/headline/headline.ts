@@ -32,6 +32,8 @@ const headline = {
     font-size: 24px;
     font-weight: ${typography.bold};
     line-height: 150%;
+    padding-bottom: 0;
+    border-bottom: none;
   `,
 };
 
