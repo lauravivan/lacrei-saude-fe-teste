@@ -12,9 +12,10 @@ import {
   ProfessionalsResults,
   Text,
 } from "./_Professionals.styles";
+import Loader from "@/components/loader/Loader";
 
 const Professionals = () => {
-  const { data: professionals } = useQuery({
+  const { data: professionals, isLoading } = useQuery({
     queryKey: ["professionals"],
     refetchOnWindowFocus: false,
     queryFn: async () => {
@@ -22,6 +23,10 @@ const Professionals = () => {
       return res;
     },
   });
+
+  if (isLoading) {
+    return <Loader/>
+  }
 
   return (
     <>

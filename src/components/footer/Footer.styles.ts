@@ -5,7 +5,7 @@ const Footer = styled.footer<{ isDesktop: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  max-width: 95%;
+  width: 90%;
   margin: 0 auto;
 
   .footer__content {

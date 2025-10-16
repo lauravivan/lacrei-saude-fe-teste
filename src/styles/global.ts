@@ -15,6 +15,13 @@ const GlobalStyles = createGlobalStyle`
         font-weight: 400;
         font-style: normal;
     }
+    
+    #app {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
 
     button, a {
       cursor: pointer;
