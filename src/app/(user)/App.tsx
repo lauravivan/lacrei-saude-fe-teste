@@ -6,15 +6,19 @@ import GlobalStyles from "@/styles/global";
 
 const queryClient = new QueryClient();
 
-type AppProps = { children?: React.ReactNode };
+interface AppProps {
+  children?: React.ReactNode;
+}
 
 export default function App({ children }: AppProps) {
   return (
-    <Suspense>
-      <QueryClientProvider client={queryClient}>
-        <GlobalStyles />
-        <div id="app">{children}</div>
-      </QueryClientProvider>
-    </Suspense>
+    <>
+      <GlobalStyles />
+      <Suspense>
+        <QueryClientProvider client={queryClient}>
+          <div id="app">{children}</div>
+        </QueryClientProvider>
+      </Suspense>
+    </>
   );
 }
