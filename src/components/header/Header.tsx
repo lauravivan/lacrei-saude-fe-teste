@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { useScreenSize } from "@/hooks/useScreenSize";
 import React, { ReactNode } from "react";
 import base from "@/styles/mixins/header/base";
+import Link from "next/link";
 
 const LogoHeader = dynamic(() => import("./LogoHeader"), {
   ssr: false,
@@ -24,7 +25,7 @@ const HeaderComponent = ({ children }: React.HTMLAttributes<HTMLElement>) => {
   return (
     <Header isDesktop={isDesktop}>
       <div className="img-wrapper">
-        <a href="/">{isDesktop ? <LogoHeaderDesktop /> : <LogoHeader />}</a>
+        <Link href="/">{isDesktop ? <LogoHeaderDesktop /> : <LogoHeader />}</Link>
       </div>
       {children}
     </Header>

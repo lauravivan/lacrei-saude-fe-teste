@@ -6,14 +6,15 @@ import { NextRequest, NextResponse } from "next/server";
 import { Professional } from "@/types/professional";
 
 export const GET = async (
-  _req: NextRequest,
-  { params }: { params: { id: string } }
+  request: NextRequest,
+  context: { params: Promise<{ id: string }> }
 ) => {
   const filePath = path.join(process.cwd(), "src", "db", "data.json");
   const jsonData = await fs.readFile(filePath, "utf8");
   const data: {
     professionals: Professional[];
   } = JSON.parse(jsonData);
-  const professional = data.professionals.find((pro) => pro.id === params.id);
+  const { id } = await context.params;
+  const professional = data.professionals.find((pro) => pro.id === id);
   return NextResponse.json(professional);
 };

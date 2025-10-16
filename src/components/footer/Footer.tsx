@@ -8,6 +8,7 @@ import Linkedin from "@/components/icons/social-media/Linkedin";
 import Instagram from "@/components/icons/social-media/Instagram";
 import LinkText from "@/components/link/LinkText";
 import FooterStyles from "./Footer.styles";
+import Link from "next/link";
 
 const Footer = () => {
   const { isDesktop } = useScreenSize();
@@ -17,14 +18,14 @@ const Footer = () => {
       <Divider margin="0 var(--spacing-m)"></Divider>
       <div className="footer__content">
         {isDesktop && (
-          <a href="/">
+          <Link href="/">
             <Image
               src={LogoFooter}
               alt="Logo Lacrei Saúde"
               width={170}
               height={48}
             />
-          </a>
+          </Link>
         )}
         <div>
           <ul className="footer__menu">
