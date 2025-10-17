@@ -19,7 +19,7 @@ describe("PrimaryBadge", () => {
 
   it("should show text when passed as children", () => {
     render(
-      <PrimaryBadge variant="Primary Badge/Success" children="Badge text" />
+      <PrimaryBadge variant="Primary Badge/Success">Badge text</PrimaryBadge>
     );
     expect(screen.getByText("Badge text")).toBeInTheDocument();
   });
@@ -27,11 +27,9 @@ describe("PrimaryBadge", () => {
   it("should show icon when passed via prop img", () => {
     const IconMock = () => <svg data-testid="icon" />;
     render(
-      <PrimaryBadge
-        variant="Primary Badge/Info"
-        children="Icon"
-        img={<IconMock />}
-      />
+      <PrimaryBadge variant="Primary Badge/Info" img={<IconMock />}>
+        Icon
+      </PrimaryBadge>
     );
     expect(screen.getByTestId("icon")).toBeInTheDocument();
     expect(screen.getByText("Icon")).toBeInTheDocument();
