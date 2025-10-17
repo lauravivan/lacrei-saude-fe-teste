@@ -3,7 +3,7 @@
 import dynamic from "next/dynamic";
 import styled from "styled-components";
 import { useScreenSize } from "@/hooks/useScreenSize";
-import React, { ReactNode } from "react";
+import React from "react";
 import base from "@/styles/mixins/header/base";
 import Link from "next/link";
 

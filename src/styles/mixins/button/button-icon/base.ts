@@ -7,7 +7,12 @@ const base = (bgColor: string, iconColor: string) => css`
   height: 48px;
   background-color: ${bgColor};
   border-radius: ${effects["border-radius-sm"]};
-  padding: ${spacing["spacing-inset-sm"]} svg {
+  padding: 0 ${spacing["spacing-inset-sm"]};
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  
+  svg {
     fill: ${iconColor};
     width: 24px;
   }

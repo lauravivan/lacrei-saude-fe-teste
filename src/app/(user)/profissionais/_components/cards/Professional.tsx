@@ -33,7 +33,7 @@ export default function Professional({ professional }: ProfessionalsProps) {
             <ProfessionalPictureContainer>
               <Image
                 width={100}
-                height={100}
+                height={80}
                 src={`/professionals/${professional.picture}.webp`}
                 alt={`Foto da pessoa ${professional.name}`}
               />

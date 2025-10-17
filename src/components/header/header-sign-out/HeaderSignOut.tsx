@@ -6,6 +6,7 @@ import Popover from "../../popover/Popover";
 import Button from "@/components/button/Button";
 import ButtonIcon from "@/components/button/ButtonIcon";
 import spacing from "@/styles/tokens/spacing";
+import colors from "@/styles/tokens/colors";
 
 const Container = styled.div`
   margin-left: auto;
@@ -14,6 +15,10 @@ const Container = styled.div`
 
   > div:first-of-type {
     margin-right: ${spacing["spacing-2-xs"]};
+  }
+
+  svg {
+    fill: ${colors["emerald-60"]};
   }
 `;
 

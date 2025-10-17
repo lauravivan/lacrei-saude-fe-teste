@@ -51,7 +51,11 @@ const Footer = styled.footer<{ isDesktop: boolean }>`
 
 export const SocialMediaList = styled.ul`
   li {
-    ${buttonIcon["Ghost Button Icon"]};
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    padding: ${spacing["spacing-xs"]};
+    cursor: pointer;
 
     a {
       all: unset;

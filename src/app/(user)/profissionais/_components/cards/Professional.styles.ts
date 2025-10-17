@@ -67,8 +67,8 @@ export const ProfessionalBio = styled.p`
 `;
 
 export const ProfessionalPictureContainer = styled.div`
-  width: 60px;
-  height: auto;
+  width: 65px;
+  height: 63px;
 
   img {
     width: 100%;

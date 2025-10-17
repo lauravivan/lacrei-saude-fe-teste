@@ -25,7 +25,7 @@ const base = (
   justify-content: center;
   align-items: center;
   column-gap: ${columnGap};
-  padding: ${spacing["spacing-inline-xxm"]};
+  padding: 0 ${spacing["spacing-inline-xxm"]};
   font-family: ${typography["family-nunito"]};
 
   svg {
