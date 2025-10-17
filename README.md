@@ -92,10 +92,22 @@ Realizar as configurações necessárias na própria vercel (https://vercel.com)
 
 [Testes no terminal](/public/tests.png);
 
-## Para executar os testes rode:
+### Para executar os testes rode:
 
 ```
 npm run test
+```
+
+### Para executar os testes em watch mode rode:
+
+```
+npm run test:watch
+```
+
+### Para executar a cobertura de testes rode:
+
+```
+npm run test:coverage
 ```
 
 ## Proposta de rollback
