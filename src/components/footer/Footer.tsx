@@ -51,7 +51,7 @@ const Footer = () => {
             </li>
           </ul>
           <div>
-            <SocialMediaList>
+            <SocialMediaList id="social-media">
               <li>
                 <Link
                   aria-label="facebook site externo - abrirá uma nova janela"
