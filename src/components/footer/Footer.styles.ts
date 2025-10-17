@@ -1,3 +1,6 @@
+import buttonIcon from "@/styles/mixins/button/button-icon/button-icon";
+import text from "@/styles/mixins/text";
+import colors from "@/styles/tokens/colors";
 import spacing from "@/styles/tokens/spacing";
 import styled from "styled-components";
 
@@ -41,12 +44,29 @@ const Footer = styled.footer<{ isDesktop: boolean }>`
         flex-direction: ${({ isDesktop }) => (isDesktop ? "row" : "column")};
         justify-content: space-between;
         align-items: ${({ isDesktop }) => (isDesktop ? "center" : "auto")};
-
-        .footer__social-media {
-        }
       }
     }
   }
+`;
+
+export const SocialMediaList = styled.ul`
+  li {
+    ${buttonIcon["Ghost Button Icon"]};
+
+    a {
+      all: unset;
+    }
+  }
+
+  svg {
+    fill: ${colors["emerald-60"]};
+    width: 2rem;
+    height: 2rem;
+  }
+`;
+
+export const CNPJ = styled.p`
+  ${text["Text-base"]}
 `;
 
 export default Footer;

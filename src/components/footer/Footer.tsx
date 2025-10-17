@@ -7,14 +7,14 @@ import Mail from "@/components/icons/Mail";
 import Linkedin from "@/components/icons/social-media/Linkedin";
 import Instagram from "@/components/icons/social-media/Instagram";
 import LinkText from "@/components/link/LinkText";
-import FooterStyles from "./Footer.styles";
+import FooterStyles, { CNPJ, SocialMediaList } from "./Footer.styles";
 import Link from "next/link";
 
 const Footer = () => {
   const { isDesktop } = useScreenSize();
 
   return (
-    <FooterStyles className="footer" isDesktop={isDesktop}>
+    <FooterStyles isDesktop={isDesktop}>
       <Divider margin="0 var(--spacing-m)"></Divider>
       <div className="footer__content">
         {isDesktop && (
@@ -51,49 +51,41 @@ const Footer = () => {
             </li>
           </ul>
           <div>
-            <ul className="footer__social-media">
+            <SocialMediaList>
               <li>
-                {/* <BtnLinkIcon
-                  color="emerald"
-                  type="none"
-                  ariaLabel="facebook site externo - abrirá uma nova janela"
+                <Link
+                  aria-label="facebook site externo - abrirá uma nova janela"
                   href="https://www.facebook.com/lacrei.saude/"
                 >
                   <Facebook />
-                </BtnLinkIcon> */}
+                </Link>
               </li>
               <li>
-                {/* <BtnLinkIcon
-                  color="emerald"
-                  type="none"
-                  ariaLabel="instagram site externo - abrirá uma nova janela"
+                <Link
+                  aria-label="instagram site externo - abrirá uma nova janela"
                   href="https://www.instagram.com/lacrei.saude/"
                 >
                   <Instagram />
-                </BtnLinkIcon> */}
+                </Link>
               </li>
               <li>
-                {/* <BtnLinkIcon
-                  color="emerald"
-                  type="none"
-                  ariaLabel="linkedin site externo - abrirá uma nova janela"
+                <Link
+                  aria-label="linkedin site externo - abrirá uma nova janela"
                   href="https://linkedin.com/company/lacrei/"
                 >
                   <Linkedin />
-                </BtnLinkIcon> */}
+                </Link>
               </li>
               <li>
-                {/* <BtnLinkIcon
-                  color="emerald"
-                  type="none"
-                  ariaLabel="e-mail site externo - abrirá uma nova janela com seu e-mail como remetente e a lacrei saúde como destinatário"
+                <Link
+                  aria-label="e-mail site externo - abrirá uma nova janela com seu e-mail como remetente e a lacrei saúde como destinatário"
                   href="#"
                 >
                   <Mail />
-                </BtnLinkIcon> */}
+                </Link>
               </li>
-            </ul>
-            {/* <Text variant="Text-base">CNPJ: 51.265.351/0001-65</Text> */}
+            </SocialMediaList>
+            <CNPJ>CNPJ: 51.265.351/0001-65</CNPJ>
           </div>
         </div>
       </div>

@@ -4,7 +4,7 @@ import colors from "@/styles/tokens/colors";
 
 const ghostButtonIcon = () => css`
   ${base(colors["gray-10"], colors["gray-80"])};
-  border-color: none;
+  border-color: transparent;
   border-style: solid;
 
   &:hover {
