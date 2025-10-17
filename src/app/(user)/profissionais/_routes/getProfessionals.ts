@@ -1,11 +1,13 @@
+import getHeader from "@/utils/getHeader";
+
 export async function getProfessionals() {
   try {
+    const header = await getHeader();
     const isClient = typeof window !== "undefined";
-    const res = await fetch(
-      isClient
-        ? `/api/professionals`
-        : "http://localhost:3000/api/professionals"
-    );
+
+    const url = isClient ? "/api/professionals" : `${header}/api/professionals`;
+
+    const res = await fetch(url, { cache: "no-store" });
     return await res.json();
   } catch (e) {
     console.log("An error occurred when trying to search for professionals", e);
@@ -14,12 +16,15 @@ export async function getProfessionals() {
 
 export async function getProfessional(id: string) {
   try {
+    const header = await getHeader();
     const isClient = typeof window !== "undefined";
-    const res = await fetch(
-      isClient
-        ? `/api/professionals/${id}`
-        : `http://localhost:3000/api/professionals/${id}`
-    );
+
+    const url = isClient
+      ? `/api/professionals/${id}`
+      : `${header}/api/professionals/${id}`;
+
+    const res = await fetch(url, { cache: "no-store" });
+
     return await res.json();
   } catch (e) {
     console.log("An error occurred when trying to search for professionals", e);
