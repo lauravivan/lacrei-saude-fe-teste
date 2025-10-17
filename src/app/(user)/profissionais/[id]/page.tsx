@@ -9,5 +9,9 @@ export default async function Page({ params }: PageProps) {
   const { id } = params;
   const professional = await getProfessional(id);
 
-  return <Professional professional={professional} />;
+  return professional.id ? (
+    <Professional professional={professional} />
+  ) : (
+    <p>Nada por aqui</p>
+  );
 }

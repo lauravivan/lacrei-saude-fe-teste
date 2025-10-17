@@ -24,7 +24,7 @@ const Professional = ({ professional }: ProfessionalProps) => {
           <Image
             width={60}
             height={60}
-            src={`/professionals/${professional.picture}.webp`}
+            src={`/professionals/${professional.picture}.webp` || ""}
             alt="Foto do profissional"
           />
           <div>
