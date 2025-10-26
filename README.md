@@ -6,9 +6,63 @@ Sua missão será desenvolver duas páginas web interativas, com foco em **acess
 
 Este desafio também se conecta com os fluxos de Back-end e DevOps, simulando a realidade de desenvolvimento em produção.
 
-## Documento de especificações técnicas
+## Requisitos
 
-[Documento de especificações técnicas](https://kind-parent-217.notion.site/Lacrei-Saude-Desafio-T-cnico-27dfcc79429880a49031fb860c0ec2b5?pvs=73)
+### Funcional
+
+⇒ Construir duas páginas web interativas;
+
+⇒ Cada uma delas precisa ter header e footer personalizados seguindo design system da Lacrei
+
+### Não funcional
+
+⇒ Mobile-first
+
+⇒ Acessibilidade:
+
+- HTML semântico (correto)
+- Atributos aria quando necessário
+- Contraste de cores (nota 90 no lighthouse)
+- Leitor de tela (NVDA)
+
+⇒ Performance:
+
+- Lazy load de imagens e assets
+- Otimização de bundle
+- 80 (nota mínima Lighthouse)
+
+## UI Layer
+
+### Tecnologias
+
+- Next.js
+- TypeScript
+- Styled-Components
+- Material UI: escolhi essa biblioteca que já implementa o Material Design do google para trabalhar com a padronização de ícones, conforme o guia de estilo. Para todos os ícones que não estiverem disponíveis na biblioteca, usarei svg padrão.
+- Tanstack: escolhi essa biblioteca que já utilizo e é bem popular para realizar queries otimizadas, ao interagir com a API.
+- Axios: escolhi essa biblioteca para requisições, que é bem popular no meio JS, e também tem umas facilidades a mais de se trabalhar do que com fetch.
+- Json server: para construir a fake api
+- Eslint:
+- Prettier:
+- Vitest e React Testing Library: para realização dos testes, é mais facilmente integrável se comparado com jest
+
+### Testes
+
+⇒ Case de testes unitários 
+
+⇒ Testar no mínimo 3 componentes, incluindo: componentes de navegação, header ou footer, algum componente de conteúdo interativo
+
+### Deploy
+
+⇒ Vercel
+
+## API Layer
+
+Utilização do json-server para criar dados falsos e endpoints falsos da api.
+
+### Endpoints disponíveis:
+
+GET /professionals
 
 ## Link para acessar o projeto
 
